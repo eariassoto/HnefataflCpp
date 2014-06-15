@@ -409,7 +409,7 @@
 	<memory>
 	"Ventana.h"
 
-1402841739 source:c:\users\emmanuel\desktop\hnefatafl\main.cpp
+1402851528 source:c:\users\emmanuel\desktop\hnefatafl\main.cpp
 	<iostream>
 	<utility>
 	"Matriz.h"
@@ -419,7 +419,7 @@
 	"FichaBlanca.h"
 	"Interfaz.h"
 
-1402804026 c:\users\emmanuel\desktop\hnefatafl\matriz.h
+1402851512 c:\users\emmanuel\desktop\hnefatafl\matriz.h
 	<iostream>
 	<map>
 	"Excepcion.h"
@@ -448,6 +448,99 @@
 1402840610 c:\users\emmanuel\desktop\hnefatafl\elemento.h
 	<SFML/Graphics.hpp>
 
-1402842514 source:c:\users\emmanuel\desktop\hnefatafl\ventana.cpp
+1402851092 source:c:\users\emmanuel\desktop\hnefatafl\ventana.cpp
 	"Ventana.h"
+
+1402793400 c:\users\emmanuel\desktop\hnefatafl\include\ficha.h
+	<vector>
+	"Cuadro.h"
+	"Excepcion.h"
+
+1402671784 c:\users\emmanuel\desktop\hnefatafl\include\cuadro.h
+	<vector>
+	"Excepcion.h"
+
+1402517068 c:\users\emmanuel\desktop\hnefatafl\include\excepcion.h
+	<iostream>
+	<string>
+
+1402793366 c:\users\emmanuel\desktop\hnefatafl\include\fichablanca.h
+	"Ficha.h"
+
+1402838703 c:\users\emmanuel\desktop\hnefatafl\include\interfaz.h
+	<iostream>
+	<memory>
+	"Ventana.h"
+
+1402841739 c:\users\emmanuel\desktop\hnefatafl\include\ventana.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<iostream>
+	<memory>
+	"Elemento.h"
+
+1402840610 c:\users\emmanuel\desktop\hnefatafl\include\elemento.h
+	<SFML/Graphics.hpp>
+
+1402851512 c:\users\emmanuel\desktop\hnefatafl\include\matriz.h
+	<iostream>
+	<map>
+	"Excepcion.h"
+
+1402793400 c:\users\emmanuel\desktop\hnefatafl\include\modelo\ficha.h
+	<vector>
+	"Cuadro.h"
+	"Excepcion.h"
+
+1402671784 c:\users\emmanuel\desktop\hnefatafl\include\modelo\cuadro.h
+	<vector>
+	"Excepcion.h"
+
+1402517068 c:\users\emmanuel\desktop\hnefatafl\include\utilidades\excepcion.h
+	<iostream>
+	<string>
+
+1402793366 c:\users\emmanuel\desktop\hnefatafl\include\modelo\fichablanca.h
+	"Ficha.h"
+
+1402838703 c:\users\emmanuel\desktop\hnefatafl\include\interfaz\interfaz.h
+	<iostream>
+	<memory>
+	"Ventana.h"
+
+1402841739 c:\users\emmanuel\desktop\hnefatafl\include\modelo\ventana.h
+	<SFML/Graphics.hpp>
+	<vector>
+	<iostream>
+	<memory>
+	"Elemento.h"
+
+1402840610 c:\users\emmanuel\desktop\hnefatafl\include\interfaz\elemento.h
+	<SFML/Graphics.hpp>
+
+1402855384 c:\users\emmanuel\desktop\hnefatafl\include\utilidades\matriz.h
+	<map>
+	"Excepcion.h"
+
+1402841746 source:c:\users\emmanuel\desktop\hnefatafl\src\interfaz\interfaz.cpp
+	"Interfaz.h"
+
+1402851092 source:c:\users\emmanuel\desktop\hnefatafl\src\interfaz\ventana.cpp
+	"Ventana.h"
+
+1402855461 source:c:\users\emmanuel\desktop\hnefatafl\src\main.cpp
+	<iostream>
+	<utility>
+	"Matriz.h"
+	"Excepcion.h"
+	"Cuadro.h"
+	"Ficha.h"
+	"FichaBlanca.h"
+	"Interfaz.h"
+
+1402692940 source:c:\users\emmanuel\desktop\hnefatafl\src\modelo\ficha.cpp
+	"Ficha.h"
+
+1402793362 source:c:\users\emmanuel\desktop\hnefatafl\src\modelo\fichablanca.cpp
+	"FichaBlanca.h"
 
