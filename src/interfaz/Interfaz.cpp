@@ -34,10 +34,13 @@ void Interfaz::dibujar()
     sf::CircleShape shape(50);
     shape.setFillColor(sf::Color(100, 250, 50));
     shape.setPosition(sf::Vector2f(200,20));
-    vector<sf::Drawable*> v;
-    v.push_back(&shape);
-    vector<sf::Drawable*>::iterator it = v.begin();
-    ventana_.draw(**it);
+
+    elementos.push_back(&shape);
+    vector<sf::Drawable*>::iterator it = elementos.begin();
+    for(it; it != elementos.end(); it++){
+        ventana_.draw(**it);
+    }
+
 }
 
 Interfaz::Interfaz(sf::RenderWindow& ventana): ventana_(ventana)

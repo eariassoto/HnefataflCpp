@@ -55,6 +55,7 @@ T& Matriz<T>::operator() (unsigned fila, unsigned columna)
     return matriz[buscar];
 }
 /*
+
 template<class T>
 T Matriz<T>::operator() (unsigned fila, unsigned columna) const
 {
@@ -67,6 +68,7 @@ T Matriz<T>::operator() (unsigned fila, unsigned columna) const
     return matriz[buscar];
 }
 */
+
 template<class T>
 void Matriz<T>::swap(int n1, int m1, int n2, int m2){
     pair<int, int> e1(n1, m1), e2(n2, m2);

@@ -9,10 +9,11 @@ using namespace std;
 class Interfaz
 {
 public:
-
-    Interfaz(sf::RenderWindow&);
+    Interfaz(vector<sf::RenderWindow&>);
     sf::RenderWindow& ventana_;
     void dibujar();
+private:
+    map< sf::RenderWindow&, vector<sf::Drawable*> > elementos;
 //    /** \class Cuadro
 //     * \brief Mantiene un arbol con un contenedor para las instancias de sf::RectangleShape que son los cuadros del tablero.
 //
