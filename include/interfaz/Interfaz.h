@@ -2,7 +2,7 @@
 #define INTERFAZ_H_
 #include <iostream>
 #include <memory>
-#include "Ventana.h"
+#include <SFML/Graphics.hpp>
 
 using namespace std;
 
@@ -10,8 +10,9 @@ class Interfaz
 {
 public:
 
-    Interfaz();
-//
+    Interfaz(sf::RenderWindow&);
+    sf::RenderWindow& ventana_;
+    void dibujar();
 //    /** \class Cuadro
 //     * \brief Mantiene un arbol con un contenedor para las instancias de sf::RectangleShape que son los cuadros del tablero.
 //

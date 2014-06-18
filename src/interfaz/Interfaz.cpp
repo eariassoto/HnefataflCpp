@@ -29,37 +29,19 @@
 //        delete hijoIzq;
 //}
 //
-Interfaz::Interfaz()
+void Interfaz::dibujar()
 {
-    cout << "Construi interfaz" << endl;
-    sf::RenderWindow v(sf::VideoMode(600,400), "Hnefatafl");
-    unique_ptr<Ventana> ventana(new Ventana(v));
-
     sf::CircleShape shape(50);
     shape.setFillColor(sf::Color(100, 250, 50));
-    Elemento * e = new Elemento(shape);
+    shape.setPosition(sf::Vector2f(200,20));
+    vector<sf::Drawable*> v;
+    v.push_back(&shape);
+    vector<sf::Drawable*>::iterator it = v.begin();
+    ventana_.draw(**it);
+}
 
-    ventana->push(*e);
-    while (v.isOpen())
-    {
-        // check all the window's events that were triggered since the last iteration of the loop
-        sf::Event event;
-        while (v.pollEvent(event))
-        {
-            // "close requested" event: we close the window
-            if (event.type == sf::Event::Closed)
-                v.close();
-        }
-
-        // clear the window with black color
-        v.clear(sf::Color::Black);
-
-        // draw everything here...
-         ventana->dibujar();
-
-        // end the current frame
-        v.display();
-    }
+Interfaz::Interfaz(sf::RenderWindow& ventana): ventana_(ventana)
+{
     //this->mousex = -1;
     //this->mousey = -1;
     //this->cantCuadros = 5;

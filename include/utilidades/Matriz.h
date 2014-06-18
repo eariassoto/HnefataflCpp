@@ -1,5 +1,6 @@
 #ifndef _MATRIZ_H_
 #define _MATRIZ_H_
+#include <stdio.h>
 #include <map>
 #include "Excepcion.h"
 
@@ -13,6 +14,7 @@ public:
    // Matriz(Matriz const& m);               // Constructor que copia, hay que implementar
 
     virtual T& operator() (unsigned, unsigned);
+
     //T  operator() (unsigned, unsigned) const;
     //Matriz& operator= (Matriz const& m);   // Operador de asignacion
     virtual void swap(int, int, int, int);
@@ -27,16 +29,16 @@ Matriz<T>::Matriz(unsigned filas, unsigned columnas)
     : filas_ (filas)
     , columnas_ (columnas)
 {
-    if (filas <= 0)
+    if (filas < 0)
         throw Excepcion("El rango de las filas es negativo o cero. No se pudo crear la matriz.");
-    else if (columnas <= 0)
+    else if (columnas < 0)
         throw Excepcion("El rango de las columnas es negativo o cero. No se pudo crear la matriz.");
 
     for(int i = 0; i < filas_; i++)
         for(int j = 0; j < columnas_; j++)
         {
             pair<int, int> index(i, j);
-            pair<pair<int, int>, T> contenido(index, 0);
+            pair<pair<int, int>, T> contenido(index, T{});
             matriz.insert(contenido);
         }
 }
@@ -44,9 +46,9 @@ Matriz<T>::Matriz(unsigned filas, unsigned columnas)
 template<class T>
 T& Matriz<T>::operator() (unsigned fila, unsigned columna)
 {
-    if (fila <= 0 || fila >= filas_)
+    if (fila < 0 || fila >= filas_)
         throw Excepcion("El rango de la fila es negativo o cero. No se pudo acceder ");
-    else if (columna <= 0 || columna >= columnas_)
+    else if (columna < 0 || columna >= columnas_)
         throw Excepcion("El rango de la columna es negativo o cero. No se pudo acceder al dato.");
 
     pair<int, int> buscar(fila, columna);

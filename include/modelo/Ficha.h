@@ -9,13 +9,10 @@ using namespace std;
 class Ficha: public Cuadro
 {
 public:
-    Ficha();
-    virtual Cuadro* mover(Cuadro*);
+    Ficha(Cuadro*, Cuadro*, Cuadro*, Cuadro*);
+    virtual int* mover(Cuadro*);
     virtual void comer(){};
-
-protected:
-    const int ARR, DER, ABA, IZQ; //sigue orden agujas reloj
-    vector<Cuadro*> cuadroPtr;
+	virtual bool esCuadro(Cuadro*);
 };
 
 #endif // FICHA_H_
