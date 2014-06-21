@@ -45,23 +45,46 @@ int main()
         cout << e.what() << endl;
     }
 
-    try{
-	Cuadro * c0 = new Cuadro(0,0,0,0);
-	Cuadro * c1 = new Cuadro(0,0,0,0);
-	Cuadro * c2 = new Cuadro(0,0,0,0);
-	Cuadro * c3 = new Cuadro(0,0,0,0);
-	Cuadro * x = new Cuadro(0,0,0,0);
+    try
+    {
+        Cuadro * c0 = new Cuadro(0,0,0,0);
+        Cuadro * c1 = new Cuadro(0,0,0,0);
+        Cuadro * c2 = new Cuadro(0,0,0,0);
+        Cuadro * c3 = new Cuadro(0,0,0,0);
+        Cuadro * x = new Cuadro(0,0,0,0);
 
-	Ficha * f = new Ficha(c0, c1, c2, c3);
-	int * i = f->mover(c1);
-	cout << "mover responde " << i[0] << ", " << i[1] << endl;
+        Ficha * f = new Ficha(c0, c1, c2, c3);
+        int * i = f->mover(c1);
+        cout << "mover responde " << i[0] << ", " << i[1] << endl;
 
-	}catch(Excepcion e){
-	cout << e.what() << endl;
-	}
+    }
+    catch(Excepcion e)
+    {
+        cout << e.what() << endl;
+    }
 
-    sf::RenderWindow ventanaPrincipal(sf::VideoMode(600,400), "Hnefatafl");
+    sf::RenderWindow ventanaPrincipal(sf::VideoMode(600,600), "Hnefatafl");
     unique_ptr<Interfaz> i(new Interfaz(ventanaPrincipal));
+
+    sf::CircleShape shape(50);
+    shape.setFillColor(sf::Color(100, 250, 50));
+    shape.setPosition(sf::Vector2f(200,20));
+
+    int tamVentana = ventanaPrincipal.getSize().x;
+    int tamCuadro = (int)(tamVentana / 10);
+    for(int j = 0; j < 10; j++)
+    {
+        for(int in = 0; in < 10; in++)
+        {
+            int * coord = new int[2];
+            coord[0] = j * tamCuadro;
+            coord[1] = in * tamCuadro;
+            Cuadrado * figura = new Cuadrado(coord[0], coord[1], tamCuadro, ventanaPrincipal);
+            delete coord;
+            i->push_figura(figura);
+        }
+
+    }
 
     while (ventanaPrincipal.isOpen())
     {

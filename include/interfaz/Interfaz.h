@@ -3,17 +3,20 @@
 #include <iostream>
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include "Figura.h"
+#include "Cuadrado.h"
 
 using namespace std;
 
 class Interfaz
 {
 public:
-    Interfaz(vector<sf::RenderWindow&>);
-    sf::RenderWindow& ventana_;
+    Interfaz(sf::RenderWindow&);
     void dibujar();
+    void push_figura(Figura*);
+    sf::RenderWindow& ventana_;
 private:
-    map< sf::RenderWindow&, vector<sf::Drawable*> > elementos;
+    vector<Figura*> figuras;
 //    /** \class Cuadro
 //     * \brief Mantiene un arbol con un contenedor para las instancias de sf::RectangleShape que son los cuadros del tablero.
 //

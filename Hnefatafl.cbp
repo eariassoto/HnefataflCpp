@@ -50,6 +50,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/interfaz/Cuadrado.h" />
+		<Unit filename="include/interfaz/Figura.h" />
 		<Unit filename="include/interfaz/Interfaz.h" />
 		<Unit filename="include/modelo/Cuadro.h" />
 		<Unit filename="include/modelo/Ficha.h" />

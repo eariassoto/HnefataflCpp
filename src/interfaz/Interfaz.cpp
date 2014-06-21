@@ -31,19 +31,16 @@
 //
 void Interfaz::dibujar()
 {
-    sf::CircleShape shape(50);
-    shape.setFillColor(sf::Color(100, 250, 50));
-    shape.setPosition(sf::Vector2f(200,20));
-
-    elementos.push_back(&shape);
-    vector<sf::Drawable*>::iterator it = elementos.begin();
-    for(it; it != elementos.end(); it++){
-        ventana_.draw(**it);
+    vector<Figura*>::iterator it = figuras.begin();
+    for(it; it != figuras.end(); it++){
+        (*it)->dibujar();
     }
-
+}
+void Interfaz::push_figura(Figura* f){
+    figuras.push_back(f);
 }
 
-Interfaz::Interfaz(sf::RenderWindow& ventana): ventana_(ventana)
+Interfaz::Interfaz(sf::RenderWindow& v): ventana_(v)
 {
     //this->mousex = -1;
     //this->mousey = -1;
