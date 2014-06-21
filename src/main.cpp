@@ -1,10 +1,12 @@
 #include <iostream>
 #include <map>
 #include <utility>
+#include <string>
 #include "Matriz.h"
 #include "MatrizDoble.h"
 #include "Excepcion.h"
 #include "Cuadro.h"
+#include "Sprite.h"
 #include "Ficha.h"
 #include "FichaBlanca.h"
 #include "Interfaz.h"
@@ -64,7 +66,7 @@ int main()
     }
 
     sf::RenderWindow ventanaPrincipal(sf::VideoMode(600,600), "Hnefatafl");
-    unique_ptr<Interfaz> i(new Interfaz(ventanaPrincipal));
+    unique_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
 
     sf::CircleShape shape(50);
     shape.setFillColor(sf::Color(100, 250, 50));
@@ -74,16 +76,20 @@ int main()
     int tamCuadro = (int)(tamVentana / 10);
     for(int j = 0; j < 10; j++)
     {
-        for(int in = 0; in < 10; in++)
+        for(int i = 0; i < 10; i++)
         {
-            int * coord = new int[2];
-            coord[0] = j * tamCuadro;
-            coord[1] = in * tamCuadro;
-            Cuadrado * figura = new Cuadrado(coord[0], coord[1], tamCuadro, ventanaPrincipal);
-            delete coord;
-            i->push_figura(figura);
+            Cuadrado * figura = new Cuadrado(i, j, tamCuadro, ventanaPrincipal);
+            interfaz->push_figura(figura);
         }
 
+    }
+
+    try{
+        string str = "img/blanca.png";
+        Sprite * s = new Sprite(0, 0, 100, str, ventanaPrincipal);
+
+    }catch(Excepcion e){
+        cout << e.what() << endl;
     }
 
     while (ventanaPrincipal.isOpen())
@@ -101,7 +107,7 @@ int main()
         ventanaPrincipal.clear(sf::Color::Black);
 
         // draw everything here...
-        i->dibujar();
+        interfaz->dibujar();
 
         // end the current frame
         ventanaPrincipal.display();
