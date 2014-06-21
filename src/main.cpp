@@ -86,7 +86,8 @@ int main()
 
     try{
         string str = "img/blanca.png";
-        Sprite * s = new Sprite(0, 0, 100, str, ventanaPrincipal);
+        Sprite * s = new Sprite(0, 0, 75, str, ventanaPrincipal);
+        interfaz->push_figura(s);
 
     }catch(Excepcion e){
         cout << e.what() << endl;
