@@ -2,20 +2,34 @@
 #define _CUADRO_H_
 #include <vector>
 #include "Excepcion.h"
+#include "Figura.h"
 
 using namespace std;
 
 class Cuadro
 {
 public:
-    Cuadro(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq):
-        ARR(0), DER(1), ABA(2), IZQ(3)
+    Cuadro(Figura* f):figura(f), cuadroPtr(4)
     {
-        cuadroPtr.push_back(arr);
-        cuadroPtr.push_back(der);
-        cuadroPtr.push_back(aba);
-        cuadroPtr.push_back(izq);
     };
+
+    virtual void setPunteros(vector<Cuadro*> p)
+    {
+        vector<Cuadro*>::iterator it = cuadroPtr.begin();
+        vector<Cuadro*>::iterator it1 = p.begin();
+        for(it; it!=cuadroPtr.end(); it++)
+        {
+            *it = *it1;
+            it1++;
+        }
+    }
+
+    virtual void setPuntero(const int pos, Cuadro* ptr)
+    {
+        if(pos < 0 || pos > 3)
+            throw Excepcion("Rango fuera de limites en setPuntero");
+        cuadroPtr[pos] = ptr;
+    }
 
     virtual int* mover(Cuadro*)
     {
@@ -33,9 +47,9 @@ public:
         else
             return cuadroPtr.at(v);
     }
-
+    static const int ARR = 0, DER = 1, ABA = 2, IZQ = 3; //sigue orden agujas reloj
 protected:
-    const int ARR, DER, ABA, IZQ; //sigue orden agujas reloj
     vector<Cuadro*> cuadroPtr;
+    Figura* figura;
 };
 #endif // _CUADRO_H_

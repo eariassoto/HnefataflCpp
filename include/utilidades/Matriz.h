@@ -19,6 +19,9 @@ public:
     //Matriz& operator= (Matriz const& m);   // Operador de asignacion
     virtual void swap(int, int, int, int);
 
+    unsigned x();
+    unsigned y();
+
 protected:
     unsigned filas_, columnas_;
     map<pair<int, int>, T> matriz;
@@ -78,5 +81,19 @@ void Matriz<T>::swap(int n1, int m1, int n2, int m2)
     matriz[e1] = matriz[e2];
     matriz[e2] = aux;
 }
+
+template<class T>
+unsigned Matriz<T>::x()
+{
+    return filas_;
+}
+
+template<class T>
+unsigned Matriz<T>::y()
+{
+    return columnas_;
+}
+
+
 
 #endif // _MATRIZ_H_

@@ -2,15 +2,12 @@
 #include <map>
 #include <utility>
 #include <string>
-#include "Matriz.h"
-#include "MatrizDoble.h"
 #include "Excepcion.h"
-#include "Cuadro.h"
-#include "Ficha.h"
-#include "FichaBlanca.h"
 #include "Interfaz.h"
-#include "Circulo.h"
-#include "Archivo.h"
+#include "Tablero.h"
+#include "FabricaFicha.h"
+#include "FabricaFigura.h"
+#include "Mapa.h"
 
 using namespace std;
 
@@ -19,25 +16,23 @@ int main()
     sf::RenderWindow ventanaPrincipal(sf::VideoMode(600,600), "Hnefatafl");
     unique_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
 
-    sf::CircleShape shape(50);
-    shape.setFillColor(sf::Color(100, 250, 50));
-    shape.setPosition(sf::Vector2f(200,20));
-
     int tamVentana = ventanaPrincipal.getSize().x;
     int tamCuadro = (int)(tamVentana / 10);
-    for(int j = 0; j < 10; j++)
+    for(int i = 0; i < 10; i++)
     {
-        for(int i = 0; i < 10; i++)
+        for(int j = 0; j < 10; j++)
         {
-            Cuadrado * figura = new Cuadrado(i, j, tamCuadro, ventanaPrincipal);
+            cout << i << ", " << j << "  ";
+            Figura * figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CUADRADO, Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal);
             interfaz->push_figura(figura);
-            Circulo  * c = new Circulo(sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
-            interfaz->push_figura(c);
+            Figura  * figura2 = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
+            interfaz->push_figura(figura2);
         }
-
+        cout << endl;
     }
-    string pat = "map/hola.bin";
-    Archivo * a = new Archivo(pat);
+    string pat = "map/mapa.bin";
+    Mapa* m = new Mapa(pat);
+    Tablero *t = new Tablero(4);
 
     while (ventanaPrincipal.isOpen())
     {

@@ -4,7 +4,7 @@
 class FichaNegra : public Ficha
 {
 public:
-    FichaNegra(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq):Ficha(arr, der, aba, izq) {};
+    FichaNegra(Figura* f):Ficha(f) {};
     void comer();
 };
 #endif // FICHANEGRA_H_

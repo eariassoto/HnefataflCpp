@@ -4,7 +4,7 @@
 class Rey : public FichaBlanca
 {
 public:
-    Rey(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq):FichaBlanca(arr, der, aba, izq) {};
+    Rey(Figura* f):FichaBlanca(f) {};
     void comer();
 };
 #endif // REY_H_

@@ -8,7 +8,8 @@
 
 using namespace std;
 
-class Archivo{
+class Archivo
+{
 public:
     Archivo(string);
     char*       leerArchivoCaracter();
@@ -19,7 +20,7 @@ public:
     vector<int> leerArchivoEntero();
     int         getLargo();
     int         getLargoEntero();
-private:
+protected:
     const string path;
 };
 #endif // ARCHIVO_H_

@@ -1,10 +1,6 @@
 #include "Ficha.h"
 
-Ficha::Ficha(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq):
-    Cuadro(arr, der, aba, izq)
-{
-}
-
+Ficha::Ficha(Figura* f):Cuadro(f) {}
 
 int* Ficha::mover(Cuadro* c)
 {

@@ -9,7 +9,7 @@ using namespace std;
 class Ficha: public Cuadro
 {
 public:
-    Ficha(Cuadro*, Cuadro*, Cuadro*, Cuadro*);
+    Ficha(Figura*);
     virtual int* mover(Cuadro*);
     virtual void comer() {};
     virtual bool esCuadro(Cuadro*);
