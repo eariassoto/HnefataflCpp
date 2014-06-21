@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="src\interfaz\Interfaz.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="681" topLine="14" />
+=======
+	<File name="include\utilidades\Matriz.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1408" topLine="37" />
+>>>>>>> 2b53a365b6e8e6fb1499d6651b0087f1c2b14783
 		</Cursor>
 	</File>
 	<File name="src\main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="322" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="include\interfaz\Interfaz.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="154" topLine="0" />
+=======
+			<Cursor1 position="2595" topLine="77" />
+>>>>>>> 2b53a365b6e8e6fb1499d6651b0087f1c2b14783
 		</Cursor>
 	</File>
-	<File name="include\utilidades\Matriz.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\interfaz\Cuadrado.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="1408" topLine="29" />
 		</Cursor>
 	</File>
@@ -27,6 +38,17 @@
 		</Cursor>
 	</File>
 	<File name="include\interfaz\Figura.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+			<Cursor1 position="377" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\interfaz\Interfaz.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="154" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\interfaz\Figura.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 2b53a365b6e8e6fb1499d6651b0087f1c2b14783
 		<Cursor>
 			<Cursor1 position="216" topLine="0" />
 		</Cursor>
@@ -46,6 +68,7 @@
 			<Cursor1 position="82" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="include\interfaz\Circulo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="344" topLine="5" />
@@ -66,4 +89,6 @@
 			<Cursor1 position="368" topLine="5" />
 		</Cursor>
 	</File>
+=======
+>>>>>>> 2b53a365b6e8e6fb1499d6651b0087f1c2b14783
 </CodeBlocks_layout_file>

@@ -37,8 +37,20 @@ int main()
         }
 
     }
+<<<<<<< HEAD
     string pat = "map/hola.bin";
     Archivo * a = new Archivo(pat);
+=======
+
+    try{
+        string str = "img/blanca.png";
+        Sprite * s = new Sprite(0, 0, 75, str, ventanaPrincipal);
+        interfaz->push_figura(s);
+
+    }catch(Excepcion e){
+        cout << e.what() << endl;
+    }
+>>>>>>> 2b53a365b6e8e6fb1499d6651b0087f1c2b14783
 
     while (ventanaPrincipal.isOpen())
     {
