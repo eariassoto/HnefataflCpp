@@ -749,23 +749,25 @@
 1403314290 c:\users\emman_000\hnefataflcpp\include\interfaz\cuadrado.h
 	"Figura.h"
 
-1403307545 source:c:\users\emmanuel\hnefataflcpp\src\interfaz\interfaz.cpp
+1403315318 source:c:\users\emmanuel\hnefataflcpp\src\interfaz\interfaz.cpp
 	"Interfaz.h"
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\interfaz\interfaz.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\interfaz\interfaz.h
 	<iostream>
 	<memory>
 	<SFML/Graphics.hpp>
 	"Figura.h"
 	"Cuadrado.h"
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
 	<SFML/Graphics.hpp>
 
-1403308434 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
+1403314730 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
+	<string>
 	"Figura.h"
+	"Excepcion.h"
 
-1403310321 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
+1403356290 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
 	<iostream>
 	<map>
 	<utility>
@@ -774,44 +776,60 @@
 	"MatrizDoble.h"
 	"Excepcion.h"
 	"Cuadro.h"
-	"Sprite.h"
 	"Ficha.h"
 	"FichaBlanca.h"
 	"Interfaz.h"
+	"Circulo.h"
+	"Archivo.h"
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\utilidades\matriz.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\utilidades\matriz.h
 	<stdio.h>
 	<map>
 	"Excepcion.h"
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\utilidades\excepcion.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\utilidades\excepcion.h
 	<iostream>
 	<string>
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\utilidades\matrizdoble.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\utilidades\matrizdoble.h
 	"Matriz.h"
 	<map>
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\modelo\cuadro.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\modelo\cuadro.h
 	<vector>
 	"Excepcion.h"
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
 	<vector>
 	"Cuadro.h"
 	"Excepcion.h"
 
-1403307545 c:\users\emmanuel\hnefataflcpp\include\modelo\fichablanca.h
+1403315318 c:\users\emmanuel\hnefataflcpp\include\modelo\fichablanca.h
 	"Ficha.h"
 
-1403307545 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
+1403315318 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
 	"Ficha.h"
 
 1403307545 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichablanca.cpp
 	"FichaBlanca.h"
 
-1403310309 c:\users\emmanuel\hnefataflcpp\include\interfaz\sprite.h
+1403312607 c:\users\emmanuel\hnefataflcpp\include\interfaz\sprite.h
 	<string>
 	"Excepcion.h"
 	"Figura.h"
+
+1403314894 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
+	<string>
+	"Figura.h"
+	"Excepcion.h"
+
+1403357767 c:\users\emmanuel\hnefataflcpp\include\utilidades\archivo.h
+	<string>
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<vector>
+
+1403357767 source:c:\users\emmanuel\hnefataflcpp\src\utilidades\archivo.cpp
+	"Archivo.h"
 

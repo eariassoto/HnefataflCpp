@@ -32,11 +32,13 @@
 void Interfaz::dibujar()
 {
     vector<Figura*>::iterator it = figuras.begin();
-    for(it; it != figuras.end(); it++){
+    for(it; it != figuras.end(); it++)
+    {
         (*it)->dibujar();
     }
 }
-void Interfaz::push_figura(Figura* f){
+void Interfaz::push_figura(Figura* f)
+{
     figuras.push_back(f);
 }
 

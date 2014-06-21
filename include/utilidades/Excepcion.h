@@ -5,15 +5,17 @@
 
 using namespace std;
 
-class Excepcion: public exception{
+class Excepcion: public exception
+{
 public:
 
-    explicit Excepcion(const char* m): msg(m){}
+    explicit Excepcion(const char* m): msg(m) {}
 
-    virtual ~Excepcion() throw (){}
+    virtual ~Excepcion() throw () {}
 
-    virtual const char* what() const throw (){
-       return msg.c_str();
+    virtual const char* what() const throw ()
+    {
+        return msg.c_str();
     }
 
 protected:

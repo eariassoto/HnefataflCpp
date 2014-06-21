@@ -1,6 +1,9 @@
 #ifndef CUADRADO_H_
 #define CUADRADO_H_
+#include <string>
 #include "Figura.h"
+#include "Excepcion.h"
+
 class Cuadrado: public Figura
 {
 public:
@@ -23,13 +26,12 @@ public:
     }
 
     Cuadrado(sf::RectangleShape& r, sf::RenderWindow& v):rectangulo(r), Figura(v) {};
+
     Cuadrado(int x, int y, int t, sf::RenderWindow& v):rectangulo(sf::Vector2f(t, t)), Figura(v)
     {
         rectangulo.setFillColor(getColorCuadro(x, y));
         rectangulo.setPosition(x*t, y*t);
     }
-
-
 
     void dibujar()
     {

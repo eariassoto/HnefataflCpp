@@ -11,7 +11,7 @@ class Matriz
 {
 public:
     Matriz(unsigned, unsigned);
-   // Matriz(Matriz const& m);               // Constructor que copia, hay que implementar
+    // Matriz(Matriz const& m);               // Constructor que copia, hay que implementar
 
     virtual T& operator() (unsigned, unsigned);
 
@@ -38,7 +38,7 @@ Matriz<T>::Matriz(unsigned filas, unsigned columnas)
         for(int j = 0; j < columnas_; j++)
         {
             pair<int, int> index(i, j);
-            pair<pair<int, int>, T> contenido(index, T{});
+            pair<pair<int, int>, T> contenido(index, T {});
             matriz.insert(contenido);
         }
 }
@@ -70,7 +70,8 @@ T Matriz<T>::operator() (unsigned fila, unsigned columna) const
 */
 
 template<class T>
-void Matriz<T>::swap(int n1, int m1, int n2, int m2){
+void Matriz<T>::swap(int n1, int m1, int n2, int m2)
+{
     pair<int, int> e1(n1, m1), e2(n2, m2);
     T aux;
     aux = matriz[e1];

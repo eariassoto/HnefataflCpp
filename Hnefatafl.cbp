@@ -50,6 +50,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/interfaz/Circulo.h" />
 		<Unit filename="include/interfaz/Cuadrado.h" />
 		<Unit filename="include/interfaz/Figura.h" />
 		<Unit filename="include/interfaz/Interfaz.h" />
@@ -57,6 +58,7 @@
 		<Unit filename="include/modelo/Ficha.h" />
 		<Unit filename="include/modelo/FichaBlanca.h" />
 		<Unit filename="include/modelo/Tablero.h" />
+		<Unit filename="include/utilidades/Archivo.h" />
 		<Unit filename="include/utilidades/Excepcion.h" />
 		<Unit filename="include/utilidades/Matriz.h" />
 		<Unit filename="include/utilidades/MatrizDoble.h" />
@@ -64,6 +66,8 @@
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/modelo/Ficha.cpp" />
 		<Unit filename="src/modelo/FichaBlanca.cpp" />
+		<Unit filename="src/modelo/Tablero.cpp" />
+		<Unit filename="src/utilidades/Archivo.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

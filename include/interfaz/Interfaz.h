@@ -58,7 +58,7 @@ private:
 //    int               cantCuadros;
 //    int               mousex;
 //    int               mousey;
-   /// sf::RenderWindow& ventana;
+    /// sf::RenderWindow& ventana;
 //    sf::Font          fuente;
 //    Cuadro *          raiz;
 //

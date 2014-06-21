@@ -1,16 +1,17 @@
 #ifndef _TABLERO_H_
 #define _TABLERO_H_
 #include <iostream>
-#include <map>
+#include "Matriz.h"
 #include "Ficha.h"
 
 using namespace std;
 
-class Tablero{
+class Tablero
+{
 public:
-    Tablero();
+    Tablero(int);
 private:
-    map<pair<int, int>, Ficha*> mapFichas;
+    Matriz<Ficha*> matriz;
 
     void mover(int, int);
 };
