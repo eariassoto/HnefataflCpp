@@ -754,25 +754,26 @@
 	"Figura.h"
 	"Excepcion.h"
 
-1403315318 source:c:\users\emmanuel\hnefataflcpp\src\interfaz\interfaz.cpp
+1403454908 source:c:\users\emmanuel\hnefataflcpp\src\interfaz\interfaz.cpp
 	"Interfaz.h"
 
-1403315318 c:\users\emmanuel\hnefataflcpp\include\interfaz\interfaz.h
+1403454809 c:\users\emmanuel\hnefataflcpp\include\interfaz\interfaz.h
 	<iostream>
 	<memory>
 	<SFML/Graphics.hpp>
 	"Figura.h"
 	"Cuadrado.h"
+	"Circulo.h"
 
-1403315318 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
+1403457377 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
 	<SFML/Graphics.hpp>
-
-1403367283 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
-	<string>
-	"Figura.h"
 	"Excepcion.h"
 
-1403376432 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
+1403457377 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
+	<string>
+	"Figura.h"
+
+1403457425 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
 	<iostream>
 	<map>
 	<utility>
@@ -784,7 +785,7 @@
 	"FabricaFigura.h"
 	"Mapa.h"
 
-1403366597 c:\users\emmanuel\hnefataflcpp\include\utilidades\matriz.h
+1403453387 c:\users\emmanuel\hnefataflcpp\include\utilidades\matriz.h
 	<stdio.h>
 	<map>
 	"Excepcion.h"
@@ -797,12 +798,12 @@
 	"Matriz.h"
 	<map>
 
-1403366766 c:\users\emmanuel\hnefataflcpp\include\modelo\cuadro.h
+1403457235 c:\users\emmanuel\hnefataflcpp\include\modelo\cuadro.h
 	<vector>
 	"Excepcion.h"
 	"Figura.h"
 
-1403366804 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
+1403454351 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
 	<vector>
 	"Cuadro.h"
 	"Excepcion.h"
@@ -810,7 +811,7 @@
 1403366819 c:\users\emmanuel\hnefataflcpp\include\modelo\fichablanca.h
 	"Ficha.h"
 
-1403366802 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
+1403455098 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
 	"Ficha.h"
 
 1403307545 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichablanca.cpp
@@ -821,7 +822,7 @@
 	"Excepcion.h"
 	"Figura.h"
 
-1403314894 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
+1403457377 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
 	<string>
 	"Figura.h"
 	"Excepcion.h"
@@ -833,7 +834,7 @@
 	<stdlib.h>
 	<vector>
 
-1403378050 source:c:\users\emmanuel\hnefataflcpp\src\utilidades\archivo.cpp
+1403450383 source:c:\users\emmanuel\hnefataflcpp\src\utilidades\archivo.cpp
 	"Archivo.h"
 
 1403365876 source:c:\users\emman_000\hnefataflcpp\src\modelo\tablero.cpp
@@ -871,22 +872,22 @@
 1403366819 c:\users\emmanuel\hnefataflcpp\include\modelo\fichanegra.h
 	"Ficha.h"
 
-1403366597 source:c:\users\emmanuel\hnefataflcpp\src\modelo\tablero.cpp
+1403452576 source:c:\users\emmanuel\hnefataflcpp\src\modelo\tablero.cpp
 	"Tablero.h"
 
-1403364624 c:\users\emmanuel\hnefataflcpp\include\modelo\tablero.h
+1403453439 c:\users\emmanuel\hnefataflcpp\include\modelo\tablero.h
 	<iostream>
 	<vector>
 	"Matriz.h"
 	"Cuadro.h"
 
-1403362368 source:c:\users\emmanuel\hnefataflcpp\src\modelo\rey.cpp
+1403457235 source:c:\users\emmanuel\hnefataflcpp\src\modelo\rey.cpp
 	"Rey.h"
 
-1403366819 c:\users\emmanuel\hnefataflcpp\include\modelo\rey.h
+1403457235 c:\users\emmanuel\hnefataflcpp\include\modelo\rey.h
 	"FichaBlanca.h"
 
-1403367898 c:\users\emmanuel\hnefataflcpp\include\modelo\fabricaficha.h
+1403449351 c:\users\emmanuel\hnefataflcpp\include\modelo\fabricaficha.h
 	"Excepcion.h"
 	"Figura.h"
 	"Cuadro.h"
@@ -894,16 +895,30 @@
 	"FichaNegra.h"
 	"Rey.h"
 
-1403367923 c:\users\emmanuel\hnefataflcpp\include\interfaz\fabricafigura.h
+1403450360 c:\users\emmanuel\hnefataflcpp\include\interfaz\fabricafigura.h
 	"Excepcion.h"
 	"Figura.h"
 	"Cuadrado.h"
 	"Circulo.h"
 
-1403379126 source:c:\users\emmanuel\hnefataflcpp\src\utilidades\mapa.cpp
+1403450382 source:c:\users\emmanuel\hnefataflcpp\src\utilidades\mapa.cpp
 	"Mapa.h"
 
-1403376835 c:\users\emmanuel\hnefataflcpp\include\utilidades\mapa.h
+1403453406 c:\users\emmanuel\hnefataflcpp\include\utilidades\mapa.h
 	"Archivo.h"
 	<iostream>
+	<map>
+	<stdexcept>
+
+1403451904 source:c:\users\emmanuel\hnefataflcpp\src\modelo\cuadro.cpp
+	"Cuadro.h"
+
+1403455789 c:\users\emmanuel\hnefataflcpp\include\modelo\mapa.h
+	"Archivo.h"
+	<iostream>
+	<map>
+	<stdexcept>
+
+1403455778 source:c:\users\emmanuel\hnefataflcpp\src\modelo\mapa.cpp
+	"Mapa.h"
 

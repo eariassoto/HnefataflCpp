@@ -7,11 +7,13 @@
 class FabricaFigura
 {
 public:
+
     enum TipoFigura
     {
         CUADRADO,
         CIRCULO,
     };
+
     static Figura *crearFigura(TipoFigura tipoFigura, sf::Color c, int x, int y, int t, sf::RenderWindow& v)
     {
         switch (tipoFigura)

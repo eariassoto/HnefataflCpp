@@ -10,9 +10,11 @@ class Ficha: public Cuadro
 {
 public:
     Ficha(Figura*);
+
     virtual int* mover(Cuadro*);
     virtual void comer() {};
     virtual bool esCuadro(Cuadro*);
+    virtual void moverFigura(int, int);
 };
 
 #endif // FICHA_H_

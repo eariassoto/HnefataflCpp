@@ -13,26 +13,76 @@ using namespace std;
 
 int main()
 {
-    sf::RenderWindow ventanaPrincipal(sf::VideoMode(600,600), "Hnefatafl");
-    unique_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
+    string pat = "map/mapa1.bin";
+    unique_ptr<Mapa> mapa(new Mapa(pat));
+    int dimension = mapa->getDimension();
+    int tamVentana = (600/dimension)*dimension;
+    int tamCuadro = (int)(tamVentana / dimension);
 
-    int tamVentana = ventanaPrincipal.getSize().x;
-    int tamCuadro = (int)(tamVentana / 10);
-    for(int i = 0; i < 10; i++)
+    sf::RenderWindow ventanaPrincipal(sf::VideoMode(tamVentana,tamVentana), "Hnefatafl");
+    unique_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
+    unique_ptr<Tablero> tablero(new Tablero(dimension));
+
+    for(int i = 0; i < dimension; i++)
     {
-        for(int j = 0; j < 10; j++)
+        for(int j = 0; j < dimension; j++)
         {
-            cout << i << ", " << j << "  ";
             Figura * figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CUADRADO, Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal);
             interfaz->push_figura(figura);
-            Figura  * figura2 = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
-            interfaz->push_figura(figura2);
+            Cuadro* cuadro;
+            Mapa::TipoFicha tF = mapa->buscar(i,j);
+            switch(tF)
+            {
+            case Mapa::TipoFicha::ESQUINA:
+            {
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal);
+                interfaz->push_figura(figura);
+            }
+            break;
+            case Mapa::TipoFicha::CUADRO:
+            {
+                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::CUADRO, figura);
+                tablero->agregarFicha(i,j, cuadro);
+            }
+            break;
+            case Mapa::TipoFicha::BLANCA:
+            {
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
+                interfaz->push_figura(figura);
+                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::BLANCA, figura);
+                tablero->agregarFicha(i,j, cuadro);
+            }
+            break;
+            case Mapa::TipoFicha::NEGRA:
+            {
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal);
+                interfaz->push_figura(figura);
+                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::NEGRA, figura);
+                tablero->agregarFicha(i,j, cuadro);
+            }
+            break;
+            case Mapa::TipoFicha::REY:
+            {
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
+                interfaz->push_figura(figura);
+                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::REY, figura);
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal);
+                interfaz->push_figura(figura);
+                cuadro->agregarFiguraTrono(figura);
+                tablero->agregarFicha(i,j, cuadro);
+            }
+            break;
+            }
+
         }
-        cout << endl;
     }
-    string pat = "map/mapa.bin";
-    Mapa* m = new Mapa(pat);
-    Tablero *t = new Tablero(4);
+
+    /// tablero->matriz(5,5)->figura->getCirc().move(10,10); ESTO SIRVE :D (poner private lo de tablero)
+    /* tablero->imprimir();
+     tablero->mover(1,1,4,2);
+     cout << endl << endl;
+     tablero->imprimir();*/
+    //  tablero->matriz(5,5)->moverFigura(0, 3);
 
     while (ventanaPrincipal.isOpen())
     {

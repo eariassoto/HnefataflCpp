@@ -1,5 +1,5 @@
 #include "Archivo.h"
-Archivo::Archivo(string p):path(p){}
+Archivo::Archivo(string p):path(p) {}
 
 char* Archivo::leerArchivoCaracter()
 {
@@ -22,7 +22,8 @@ char* Archivo::leerCaracteres(int b, int e)
     return bloque;
 }
 
-int Archivo::leerEntero(int n){
+int Archivo::leerEntero(int n)
+{
     return leerEnteros(n,n)[0];
 }
 

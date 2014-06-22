@@ -17,7 +17,7 @@ public:
         NEGRA,
         REY
     };
-    Cuadro* crearFicha(TipoFicha tipoFicha, Figura* f)
+    static Cuadro* crearFicha(TipoFicha tipoFicha, Figura* f)
     {
         switch (tipoFicha)
         {

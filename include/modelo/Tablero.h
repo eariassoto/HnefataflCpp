@@ -12,8 +12,11 @@ class Tablero
 public:
     Tablero(int);
     void agregarFicha(int, int, Cuadro*);
+    void imprimir();
+    void mover(int, int, int, int);
 
-private:
+//private:
     Matriz<Cuadro*> matriz;
+    int             dimension;
 };
 #endif // _TABLERO_H_

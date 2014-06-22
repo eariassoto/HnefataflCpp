@@ -93,7 +93,4 @@ unsigned Matriz<T>::y()
 {
     return columnas_;
 }
-
-
-
 #endif // _MATRIZ_H_

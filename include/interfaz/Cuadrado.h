@@ -2,11 +2,11 @@
 #define CUADRADO_H_
 #include <string>
 #include "Figura.h"
-#include "Excepcion.h"
 
 class Cuadrado: public Figura
 {
 public:
+
     static sf::Color getColorCuadro(int coordX, int coordY)
     {
         if (coordX % 2 == 0)
@@ -35,9 +35,21 @@ public:
 
     void dibujar()
     {
-        ventana.draw(rectangulo);
+        if(visible)
+            ventana.draw(rectangulo);
     }
+
+    sf::CircleShape& getCirc()
+    {
+        throw Excepcion("Soy un cuadro");
+    };
+    sf::RectangleShape& getRect()
+    {
+        return rectangulo;
+    };
+
 private:
+
     sf::RectangleShape rectangulo;
 };
 #endif // CUADRADO_H_

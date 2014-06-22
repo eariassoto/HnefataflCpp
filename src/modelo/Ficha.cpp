@@ -44,3 +44,25 @@ bool Ficha::esCuadro(Cuadro* c)
     return !r;
 }
 ///todo probar el esCuadro() con las clases derivadas hijas
+
+void Ficha::moverFigura(int pos, int n)
+{
+    int mag = 0;
+    if(pos == DER || pos == IZQ)
+    {
+        if(pos == DER)
+            mag = 2;
+        else
+            mag = -2;
+        figura->getCirc().move((mag*n*figura->getCirc().getRadius()),0);
+
+    }
+    else
+    {
+        if(pos == ABA)
+            mag = 2;
+        else
+            mag = -2;
+        figura->getCirc().move(0,(mag*n*figura->getCirc().getRadius()));
+    }
+}
