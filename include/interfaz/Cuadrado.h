@@ -48,6 +48,27 @@ public:
         return rectangulo;
     };
 
+    int* contiene(int x, int y)
+    {
+        if(rectangulo.getGlobalBounds().contains(x, y))
+        {
+            int* coord = new int[2];
+            if(rectangulo.getGlobalBounds().top == 0)
+                coord[0] = 0;
+            else
+                coord[0] = rectangulo.getGlobalBounds().top / rectangulo.getGlobalBounds().width;
+            if(rectangulo.getGlobalBounds().left == 0)
+                coord[1] = 0;
+            else
+                coord[1] = rectangulo.getGlobalBounds().left / rectangulo.getGlobalBounds().height;
+            return coord;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
 private:
 
     sf::RectangleShape rectangulo;

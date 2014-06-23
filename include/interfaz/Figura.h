@@ -19,6 +19,7 @@ public:
     {
         visible = b;
     };
+    virtual int*                contiene(int, int){throw Excepcion("no busco, soy ficha");};
 
 protected:
     sf::RenderWindow& ventana;

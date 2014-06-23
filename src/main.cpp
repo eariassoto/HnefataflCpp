@@ -90,9 +90,16 @@ int main()
         sf::Event event;
         while (ventanaPrincipal.pollEvent(event))
         {
-            // "close requested" event: we close the window
-            if (event.type == sf::Event::Closed)
+            switch(event.type)
+            {
+            case sf::Event::Closed:
                 ventanaPrincipal.close();
+                break;
+            case sf::Event::MouseButtonPressed:
+                if (event.mouseButton.button == sf::Mouse::Left)
+                    interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
+            }
+
         }
 
         // clear the window with black color

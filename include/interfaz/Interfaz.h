@@ -16,10 +16,10 @@ public:
 
     void              dibujar();
     void              push_figura(Figura*);
+    void buscarPunto(int, int);
     sf::RenderWindow& ventana_;
 
 private:
-
     vector<Figura*> figuras;
 };
 
