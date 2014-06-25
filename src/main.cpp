@@ -8,6 +8,7 @@
 #include "FabricaFicha.h"
 #include "FabricaFigura.h"
 #include "Mapa.h"
+#include "Jugador.h"
 
 using namespace std;
 
@@ -22,6 +23,9 @@ int main()
     sf::RenderWindow ventanaPrincipal(sf::VideoMode(tamVentana,tamVentana), "Hnefatafl");
     unique_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
     unique_ptr<Tablero> tablero(new Tablero(dimension));
+
+    unique_ptr<Jugador> jugador1(new Jugador(Jugador::TipoFicha::BLANCA));
+    unique_ptr<Jugador> jugador2(new Jugador(Jugador::TipoFicha::NEGRA));
 
     for(int i = 0; i < dimension; i++)
     {
@@ -96,8 +100,11 @@ int main()
                 ventanaPrincipal.close();
                 break;
             case sf::Event::MouseButtonPressed:
-                if (event.mouseButton.button == sf::Mouse::Left)
+                if (event.mouseButton.button == sf::Mouse::Left){
                     interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
+                    cout << "jug dice " << jugador1->esFichaMia(tablero->getFicha(event.mouseButton.x, event.mouseButton.y)) << endl;
+                }
+
             }
 
         }

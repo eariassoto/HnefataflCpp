@@ -48,3 +48,8 @@ void Tablero::mover(int i1, int j1, int i2, int j2)
     matriz(i2, j2)->setNuevosPunteros(aux);
     matriz.swap(i1,j1,i2,j2);
 }
+
+Cuadro* Tablero::getFicha(int x, int y)
+{
+    return matriz(x,y);
+}

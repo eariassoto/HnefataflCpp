@@ -11,9 +11,10 @@ class Tablero
 {
 public:
     Tablero(int);
-    void agregarFicha(int, int, Cuadro*);
-    void imprimir();
-    void mover(int, int, int, int);
+    void    agregarFicha(int, int, Cuadro*);
+    void    imprimir();
+    void    mover(int, int, int, int);
+    Cuadro* getFicha(int, int);
 
 //private:
     Matriz<Cuadro*> matriz;
