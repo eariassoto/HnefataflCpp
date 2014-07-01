@@ -11,7 +11,7 @@ class Ficha: public Cuadro
 public:
     Ficha(Figura*);
 
-    virtual int* mover(Cuadro*);
+    virtual bool mover(Cuadro*);
     virtual void comer() {};
     virtual bool esCuadro(Cuadro*);
     virtual void moverFigura(int, int);

@@ -630,10 +630,10 @@
 	"Matriz.h"
 	<map>
 
-1403718019 source:c:\users\b30640\hnefataflcpp\src\interfaz\interfaz.cpp
+1404244125 source:c:\users\b30640\hnefataflcpp\src\interfaz\interfaz.cpp
 	"Interfaz.h"
 
-1403718019 c:\users\b30640\hnefataflcpp\include\interfaz\interfaz.h
+1404241408 c:\users\b30640\hnefataflcpp\include\interfaz\interfaz.h
 	<iostream>
 	<memory>
 	<SFML/Graphics.hpp>
@@ -641,7 +641,7 @@
 	"Cuadrado.h"
 	"Circulo.h"
 
-1403721710 source:c:\users\b30640\hnefataflcpp\src\main.cpp
+1404245858 source:c:\users\b30640\hnefataflcpp\src\main.cpp
 	<iostream>
 	<map>
 	<utility>
@@ -667,12 +667,12 @@
 	"Matriz.h"
 	<map>
 
-1403718019 c:\users\b30640\hnefataflcpp\include\modelo\cuadro.h
+1404244125 c:\users\b30640\hnefataflcpp\include\modelo\cuadro.h
 	<vector>
 	"Excepcion.h"
 	"Figura.h"
 
-1403718019 c:\users\b30640\hnefataflcpp\include\modelo\ficha.h
+1404243829 c:\users\b30640\hnefataflcpp\include\modelo\ficha.h
 	<vector>
 	"Cuadro.h"
 	"Excepcion.h"
@@ -680,7 +680,7 @@
 1403718019 c:\users\b30640\hnefataflcpp\include\modelo\fichablanca.h
 	"Ficha.h"
 
-1403718019 source:c:\users\b30640\hnefataflcpp\src\modelo\ficha.cpp
+1404246630 source:c:\users\b30640\hnefataflcpp\src\modelo\ficha.cpp
 	"Ficha.h"
 
 1403718019 source:c:\users\b30640\hnefataflcpp\src\modelo\fichablanca.cpp
@@ -959,20 +959,20 @@
 1403477878 source:c:\users\emman_000\hnefataflcpp\src\modelo\rey.cpp
 	"Rey.h"
 
-1403718019 c:\users\b30640\hnefataflcpp\include\interfaz\figura.h
+1404244125 c:\users\b30640\hnefataflcpp\include\interfaz\figura.h
 	<SFML/Graphics.hpp>
 	"Excepcion.h"
 
-1403718019 c:\users\b30640\hnefataflcpp\include\interfaz\cuadrado.h
+1404245858 c:\users\b30640\hnefataflcpp\include\interfaz\cuadrado.h
 	<string>
 	"Figura.h"
 
-1403718019 c:\users\b30640\hnefataflcpp\include\interfaz\circulo.h
+1404245858 c:\users\b30640\hnefataflcpp\include\interfaz\circulo.h
 	<string>
 	"Figura.h"
 	"Excepcion.h"
 
-1403719498 c:\users\b30640\hnefataflcpp\include\modelo\tablero.h
+1404245094 c:\users\b30640\hnefataflcpp\include\modelo\tablero.h
 	<iostream>
 	<vector>
 	"Matriz.h"
@@ -1011,7 +1011,7 @@
 	<stdlib.h>
 	<vector>
 
-1403718019 source:c:\users\b30640\hnefataflcpp\src\modelo\cuadro.cpp
+1404243851 source:c:\users\b30640\hnefataflcpp\src\modelo\cuadro.cpp
 	"Cuadro.h"
 
 1403718019 source:c:\users\b30640\hnefataflcpp\src\modelo\fichanegra.cpp
@@ -1023,13 +1023,18 @@
 1403718019 source:c:\users\b30640\hnefataflcpp\src\modelo\rey.cpp
 	"Rey.h"
 
-1403719500 source:c:\users\b30640\hnefataflcpp\src\modelo\tablero.cpp
+1404245094 source:c:\users\b30640\hnefataflcpp\src\modelo\tablero.cpp
 	"Tablero.h"
 
 1403718019 source:c:\users\b30640\hnefataflcpp\src\utilidades\archivo.cpp
 	"Archivo.h"
 
-1403721525 c:\users\b30640\hnefataflcpp\include\modelo\jugador.h
+1404244736 c:\users\b30640\hnefataflcpp\include\modelo\jugador.h
 	<memory>
 	"Cuadro.h"
+	"FichaBlanca.h"
+	"FichaNegra.h"
+
+1404244940 source:c:\users\b30640\hnefataflcpp\src\modelo\jugador.cpp
+	"Jugador.h"
 

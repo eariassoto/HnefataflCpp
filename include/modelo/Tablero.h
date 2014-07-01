@@ -13,7 +13,7 @@ public:
     Tablero(int);
     void    agregarFicha(int, int, Cuadro*);
     void    imprimir();
-    void    mover(int, int, int, int);
+    bool    mover(int*, int*);
     Cuadro* getFicha(int, int);
 
 //private:

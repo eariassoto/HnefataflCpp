@@ -2,20 +2,22 @@
 
 Ficha::Ficha(Figura* f):Cuadro(f) {}
 
-int* Ficha::mover(Cuadro* c)
+bool Ficha::mover(Cuadro* c)
 {
     bool encontrado = false;
-    int POS = 0;
+    int pos = 0;
     int pasos = 0;
-    for(int i = 0; i < 4; i++)
+    int i = -1;
+    while(!encontrado && i < 4)
     {
+        i++;
         Cuadro * vecino = cuadroPtr.at(i);
         pasos = 1;
         while(!encontrado && vecino != 0 && esCuadro(vecino))
         {
             if(vecino == c)
             {
-                POS = i;
+                pos = i;
                 encontrado = true;
             }
             else
@@ -27,10 +29,9 @@ int* Ficha::mover(Cuadro* c)
     }
     if(encontrado)
     {
-        int * coord = new int(2);
-        coord[0] = POS;
-        coord[1] = pasos;
-        return coord;
+        cout << "tengo que dar " << pasos << " pasos " << endl;
+        moverFigura(pos, pasos);
+        return encontrado;//coord;
     }
     else
     {
@@ -55,7 +56,7 @@ void Ficha::moverFigura(int pos, int n)
         else
             mag = -2;
         figura->getCirc().move((mag*n*figura->getCirc().getRadius()),0);
-
+        //figura->getCirc().setFillColor(sf::Color(255,0,0));
     }
     else
     {

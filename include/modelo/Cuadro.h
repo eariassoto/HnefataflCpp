@@ -16,10 +16,13 @@ public:
     virtual vector<Cuadro*> getPunteros();
     virtual void            setPuntero(const int, Cuadro*);
     virtual void            setNuevosPunteros(vector<Cuadro*>);
-    virtual int*            mover(Cuadro*);
+    virtual bool            mover(Cuadro*);
     virtual void            comer();
     virtual Cuadro*         getVecino(int);
-    virtual void            moverFigura(int, int){throw Excepcion("Soy un cuadro, no tengo que mover");};
+    virtual void            moverFigura(int, int)
+    {
+        throw Excepcion("Soy un cuadro, no tengo que mover");
+    };
     virtual void            agregarFiguraTrono(Figura*)
     {
         throw Excepcion("No soy rey, no tengo trono");

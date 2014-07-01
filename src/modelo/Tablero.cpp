@@ -41,12 +41,21 @@ void Tablero::imprimir()
             cout << "Soy " << i << ", " << j << " " << matriz(i,j) << " ARR: " << matriz(i,j)->cuadroPtr[0] << " DER: " << matriz(i,j)->cuadroPtr[1] << " ABA: " << matriz(i,j)->cuadroPtr[2] << " IZQ: " << matriz(i,j)->cuadroPtr[3] << endl;
 }
 
-void Tablero::mover(int i1, int j1, int i2, int j2)
+bool Tablero::mover(int* f, int* g)
 {
-    vector<Cuadro*> aux = matriz(i1,j1)->getPunteros();
-    matriz(i1, j1)->setNuevosPunteros(matriz(i2, j2)->getPunteros());
-    matriz(i2, j2)->setNuevosPunteros(aux);
-    matriz.swap(i1,j1,i2,j2);
+    try
+    {
+        cout << "ficha dice: " << matriz(f[0], f[1])->mover(matriz(g[0], g[1])) << endl;
+        return true;
+    }
+    catch(Excepcion e)
+    {
+        cout << e.what() << endl;
+    }
+    // vector<Cuadro*> aux = matriz(i1,j1)->getPunteros();
+    /// matriz(i1, j1)->setNuevosPunteros(matriz(i2, j2)->getPunteros());
+    //matriz(i2, j2)->setNuevosPunteros(aux);
+    // matriz.swap(i1,j1,i2,j2);
 }
 
 Cuadro* Tablero::getFicha(int x, int y)

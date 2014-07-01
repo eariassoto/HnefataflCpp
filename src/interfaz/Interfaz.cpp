@@ -20,20 +20,23 @@ Interfaz::Interfaz(sf::RenderWindow& v): ventana_(v)
 {
 }
 
-void Interfaz::buscarPunto(int x, int y){
+int* Interfaz::buscarPunto(int x, int y)
+{
     vector<Figura*>::iterator it = figuras.begin();
     bool encontrado = false;
     int tamVen = ventana_.getSize().x;
-    while(it!=figuras.end() && !encontrado){
-        int* coord = (*it)->contiene(x,y);
-        if(coord){
-                cout << "lo encontre en " << coord[0] << ", " << coord[1] << endl;
+    int* coord = new int[2];
+    while(it!=figuras.end() && !encontrado)
+    {
+        coord = (*it)->contiene(x,y);
+        if(coord)
+        {
             encontrado = true;
-        }else{
-        it++;
         }
-        delete coord;
+        else
+        {
+            it++;
+        }
     }
-
-
+    return coord;
 }

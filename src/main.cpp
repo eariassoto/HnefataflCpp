@@ -90,7 +90,6 @@ int main()
 
     while (ventanaPrincipal.isOpen())
     {
-        // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
         while (ventanaPrincipal.pollEvent(event))
         {
@@ -100,16 +99,30 @@ int main()
                 ventanaPrincipal.close();
                 break;
             case sf::Event::MouseButtonPressed:
-                if (event.mouseButton.button == sf::Mouse::Left){
-                    interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
-                    cout << "jug dice " << jugador1->esFichaMia(tablero->getFicha(event.mouseButton.x, event.mouseButton.y)) << endl;
+                if (event.mouseButton.button == sf::Mouse::Left)
+                {
+                    int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
+                    if(!jugador1->seleccion)
+                    {
+                        if(jugador1->esFichaMia(tablero->getFicha(coord[0], coord[1])))
+                        {
+                            cout << "seleccione " << coord[0] << ", " << coord[1] << endl;
+                            jugador1->seleccionar(coord[0], coord[1]);
+                        }
+                    }
+                    else
+                    {
+                        cout << "mande a mover a la seleccion en " << coord[0] << ", " << coord[1] << endl;
+                        tablero->mover(jugador1->getSeleccion(), coord);
+                        jugador1->seleccion = false; //linea fea TODO
+                    }
+                    delete coord;
                 }
 
             }
 
         }
 
-        // clear the window with black color
         ventanaPrincipal.clear(sf::Color::Black);
 
         // draw everything here...

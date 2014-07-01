@@ -29,7 +29,7 @@ void Cuadro::setNuevosPunteros(vector<Cuadro*> p)
     cuadroPtr[IZQ]->setPuntero(DER, this);
 }
 
-int* Cuadro::mover(Cuadro*)
+bool Cuadro::mover(Cuadro*)
 {
     throw Excepcion("Esta ficha es un cuadro, no puede moverse");
 };

@@ -2,28 +2,29 @@
 #define JUGADOR_H_
 #include <memory>
 #include "Cuadro.h"
+#include "FichaBlanca.h"
+#include "FichaNegra.h"
 
 class Jugador
 {
 public:
-    enum TipoFicha{
-    BLANCA, NEGRA
+    enum TipoFicha
+    {
+        BLANCA, NEGRA
     };
 
-    Jugador(TipoFicha tF):tipoFicha(tF){};
+    Jugador(TipoFicha);
     int x, y;
 
-    bool esFichaMia(Cuadro* c){
-        switch(tipoFicha){
-    case BLANCA:
-        return dynamic_cast<FichaBlanca*>(c);
-    case NEGRA:
-        return dynamic_cast<FichaNegra*>(c);
-        }
-    }
+    bool esFichaMia(Cuadro*);
+    void seleccionar(int, int);
+    int* getSeleccion();
+
+    bool seleccion;
+
 private:
     TipoFicha tipoFicha;
-
+    int selX, selY;
 };
 
 #endif // JUGADOR_H_

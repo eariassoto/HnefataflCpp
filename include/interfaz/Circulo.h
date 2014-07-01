@@ -13,7 +13,7 @@ public:
     Circulo(sf::Color c, int x, int y, int t, sf::RenderWindow& v):circulo(t/2), Figura(v)
     {
         circulo.setFillColor(c);
-        circulo.setPosition(x*t, y*t);
+        circulo.setPosition(y*t, x*t);
     }
 
     void dibujar()

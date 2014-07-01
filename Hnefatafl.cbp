@@ -74,6 +74,7 @@
 		<Unit filename="src/modelo/Ficha.cpp" />
 		<Unit filename="src/modelo/FichaBlanca.cpp" />
 		<Unit filename="src/modelo/FichaNegra.cpp" />
+		<Unit filename="src/modelo/Jugador.cpp" />
 		<Unit filename="src/modelo/Mapa.cpp" />
 		<Unit filename="src/modelo/Rey.cpp" />
 		<Unit filename="src/modelo/Tablero.cpp" />

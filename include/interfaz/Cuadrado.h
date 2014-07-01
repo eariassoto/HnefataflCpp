@@ -30,7 +30,7 @@ public:
     Cuadrado(sf::Color c, int x, int y, int t, sf::RenderWindow& v):rectangulo(sf::Vector2f(t, t)), Figura(v)
     {
         rectangulo.setFillColor(c);
-        rectangulo.setPosition(x*t, y*t);
+        rectangulo.setPosition(y*t, x*t);
     }
 
     void dibujar()

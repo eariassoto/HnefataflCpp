@@ -16,7 +16,7 @@ public:
 
     void              dibujar();
     void              push_figura(Figura*);
-    void buscarPunto(int, int);
+    int* buscarPunto(int, int);
     sf::RenderWindow& ventana_;
 
 private:
