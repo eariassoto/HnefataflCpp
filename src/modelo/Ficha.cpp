@@ -4,16 +4,16 @@ Ficha::Ficha(Figura* f):Cuadro(f) {}
 
 bool Ficha::mover(Cuadro* c)
 {
+    int i = 0;
     bool encontrado = false;
     int pos = 0;
     int pasos = 0;
-    int i = -1;
-    while(!encontrado && i < 4)
+
+    while(i < 4 && !encontrado)
     {
-        i++;
-        Cuadro * vecino = cuadroPtr.at(i);
+        Cuadro * vecino = getPtr(i);
         pasos = 1;
-        while(!encontrado && vecino != 0 && esCuadro(vecino))
+        while(!encontrado && vecino && esCuadro(vecino))
         {
             if(vecino == c)
             {
@@ -23,15 +23,16 @@ bool Ficha::mover(Cuadro* c)
             else
             {
                 pasos++;
-                vecino = vecino->getVecino(i);
+                vecino = vecino->getPtr(i);
             }
         }
+        i++;
     }
     if(encontrado)
     {
         cout << "tengo que dar " << pasos << " pasos " << endl;
         moverFigura(pos, pasos);
-        return encontrado;//coord;
+        return true;//coord;
     }
     else
     {

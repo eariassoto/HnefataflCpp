@@ -2,6 +2,7 @@
 #define _TABLERO_H_
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Matriz.h"
 #include "Cuadro.h"
 

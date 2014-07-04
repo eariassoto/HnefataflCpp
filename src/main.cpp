@@ -24,8 +24,9 @@ int main()
     unique_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
     unique_ptr<Tablero> tablero(new Tablero(dimension));
 
-    unique_ptr<Jugador> jugador1(new Jugador(Jugador::TipoFicha::BLANCA));
-    unique_ptr<Jugador> jugador2(new Jugador(Jugador::TipoFicha::NEGRA));
+    shared_ptr<Jugador> jugador1(new Jugador(Jugador::TipoFicha::BLANCA));
+    shared_ptr<Jugador> jugador2(new Jugador(Jugador::TipoFicha::NEGRA));
+    shared_ptr<Jugador> jugador = jugador1;
 
     for(int i = 0; i < dimension; i++)
     {
@@ -81,12 +82,6 @@ int main()
         }
     }
 
-    /// tablero->matriz(5,5)->figura->getCirc().move(10,10); ESTO SIRVE :D (poner private lo de tablero)
-    /* tablero->imprimir();
-     tablero->mover(1,1,4,2);
-     cout << endl << endl;
-     tablero->imprimir();*/
-    //  tablero->matriz(5,5)->moverFigura(0, 3);
 
     while (ventanaPrincipal.isOpen())
     {
@@ -102,33 +97,32 @@ int main()
                 if (event.mouseButton.button == sf::Mouse::Left)
                 {
                     int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
-                    if(!jugador1->seleccion)
+                    if(!jugador->seleccion)
                     {
-                        if(jugador1->esFichaMia(tablero->getFicha(coord[0], coord[1])))
+                        if(jugador->esFichaMia(tablero->getFicha(coord[0], coord[1])))
                         {
                             cout << "seleccione " << coord[0] << ", " << coord[1] << endl;
-                            jugador1->seleccionar(coord[0], coord[1]);
+                            jugador->seleccionar(coord[0], coord[1]);
                         }
                     }
                     else
                     {
                         cout << "mande a mover a la seleccion en " << coord[0] << ", " << coord[1] << endl;
-                        tablero->mover(jugador1->getSeleccion(), coord);
-                        jugador1->seleccion = false; //linea fea TODO
+                        tablero->mover(jugador->getSeleccion(), coord);
+
+                        jugador->seleccion = false; //linea fea TODO
+                        if(jugador == jugador1)
+                            jugador = jugador2;
+                        else
+                            jugador = jugador1;
                     }
                     delete coord;
                 }
-
             }
-
         }
 
         ventanaPrincipal.clear(sf::Color::Black);
-
-        // draw everything here...
         interfaz->dibujar();
-
-        // end the current frame
         ventanaPrincipal.display();
     }
 

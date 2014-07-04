@@ -1,32 +1,49 @@
 #include "Cuadro.h"
 
 
-Cuadro::Cuadro(Figura* f):figura(f), cuadroPtr(4) {};
+Cuadro::Cuadro(Figura* f):figura(f){};
 
-void Cuadro::setPunteros(vector<Cuadro*> p)
+void Cuadro::setPunteros(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq)
 {
-    cuadroPtr = p;
+    cuadroArr = arr;
+    cuadroAba = aba;
+    cuadroDer = der;
+    cuadroIzq = izq;
+}
+Cuadro* Cuadro::getPtr(int i)
+{
+    switch(i)
+    {
+    case 0:
+        return cuadroArr;
+    case 1:
+        return cuadroDer;
+    case 2:
+        return cuadroAba;
+    case 3:
+        return cuadroIzq;
+    }
 }
 
-vector<Cuadro*> Cuadro::getPunteros()
+void Cuadro::setPtr(int pos, Cuadro* ptr)
 {
-    return cuadroPtr;
-}
-
-void Cuadro::setPuntero(const int pos, Cuadro* ptr)
-{
-    if(pos < 0 || pos > 3)
-        throw Excepcion("Rango fuera de limites en setPuntero");
-    cuadroPtr[pos] = ptr;
-}
-
-void Cuadro::setNuevosPunteros(vector<Cuadro*> p)
-{
-    cuadroPtr = p;
-    cuadroPtr[ARR]->setPuntero(ABA, this);
-    cuadroPtr[DER]->setPuntero(IZQ, this);
-    cuadroPtr[ABA]->setPuntero(ARR, this);
-    cuadroPtr[IZQ]->setPuntero(DER, this);
+    switch(pos)
+    {
+    case 0:
+        cuadroArr = ptr;
+        break;
+    case 1:
+        cuadroDer = ptr;
+        break;
+    case 2:
+        cuadroAba = ptr;
+        break;
+    case 3:
+        cuadroIzq = ptr;
+        break;
+    default:
+        throw Excepcion("rango fuera filas");
+    }
 }
 
 bool Cuadro::mover(Cuadro*)
@@ -37,12 +54,4 @@ void Cuadro::comer()
 {
     throw Excepcion("Esta ficha es un cuadro, no puede comer");
 };
-
-Cuadro* Cuadro::getVecino(int v)
-{
-    if(v < 0 || v > 3)
-        throw Excepcion("Parametro de getVecino incorrecto");
-    else
-        return cuadroPtr.at(v);
-}
 
