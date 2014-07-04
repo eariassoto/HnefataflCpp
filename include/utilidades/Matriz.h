@@ -2,6 +2,7 @@
 #define _MATRIZ_H_
 #include <stdio.h>
 #include <map>
+#include <iostream>
 #include "Excepcion.h"
 
 using namespace std;
@@ -18,7 +19,6 @@ public:
     //T  operator() (unsigned, unsigned) const;
     //Matriz& operator= (Matriz const& m);   // Operador de asignacion
     virtual void swap(int, int, int, int);
-
     unsigned x();
     unsigned y();
 
@@ -93,4 +93,5 @@ unsigned Matriz<T>::y()
 {
     return columnas_;
 }
+
 #endif // _MATRIZ_H_

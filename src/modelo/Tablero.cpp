@@ -46,7 +46,9 @@ bool Tablero::mover(int* f, int* g)
     try
     {
         matriz(f[0], f[1])->mover(matriz(g[0], g[1]));
-        matriz(f[0], f[1])->mover(matriz(g[0], g[1]));
+        cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
+        matriz(f[0], f[1])->swap(matriz(g[0], g[1]));
+        cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
         return true;
     }
     catch(Excepcion e)

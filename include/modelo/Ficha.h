@@ -3,6 +3,7 @@
 #include <vector>
 #include "Cuadro.h"
 #include "Excepcion.h"
+#include <exception>
 
 using namespace std;
 

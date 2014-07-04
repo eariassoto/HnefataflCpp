@@ -46,6 +46,15 @@ void Cuadro::setPtr(int pos, Cuadro* ptr)
     }
 }
 
+void Cuadro::swap(Cuadro* c){
+    Cuadro* aux;
+    for(int i = 0; i < 4; i++){
+        aux = getPtr(i);
+        setPtr(i, c->getPtr(i));
+        c->setPtr(i, aux);
+    }
+}
+
 bool Cuadro::mover(Cuadro*)
 {
     throw Excepcion("Esta ficha es un cuadro, no puede moverse");

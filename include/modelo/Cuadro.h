@@ -15,6 +15,7 @@ public:
     virtual Cuadro* getPtr(int);
     virtual void    setPtr(int, Cuadro*);
     virtual bool    mover(Cuadro*);
+    virtual void    swap(Cuadro*);
     virtual void    comer();
     virtual void    moverFigura(int, int)
     {

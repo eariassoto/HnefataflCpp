@@ -42,8 +42,13 @@ bool Ficha::mover(Cuadro* c)
 
 bool Ficha::esCuadro(Cuadro* c)
 {
+    try{
     Cuadro* r = dynamic_cast<Ficha*>(c);
     return !r;
+    }catch(exception& e){
+    cout << e.what();
+    }
+
 }
 ///todo probar el esCuadro() con las clases derivadas hijas
 

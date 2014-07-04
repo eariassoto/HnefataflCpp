@@ -77,12 +77,12 @@ int main()
                 tablero->agregarFicha(i,j, cuadro);
             }
             break;
+            default:
+                break;
             }
 
         }
     }
-
-
     while (ventanaPrincipal.isOpen())
     {
         sf::Event event;
