@@ -18,7 +18,7 @@ public:
     Cuadro* getFicha(int, int);
 
 //private:
-    Matriz<Cuadro*> matriz;
+    vector< vector<Cuadro*> > vmatriz;
     int             dimension;
 };
 #endif // _TABLERO_H_

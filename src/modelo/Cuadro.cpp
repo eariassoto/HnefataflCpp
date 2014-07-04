@@ -1,7 +1,7 @@
 #include "Cuadro.h"
 
 
-Cuadro::Cuadro(Figura* f):figura(f){};
+Cuadro::Cuadro(Figura* f):figura(f), cuadroArr(0), cuadroDer(0), cuadroAba(0), cuadroIzq(0){};
 
 void Cuadro::setPunteros(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq)
 {
@@ -48,10 +48,17 @@ void Cuadro::setPtr(int pos, Cuadro* ptr)
 
 void Cuadro::swap(Cuadro* c){
     Cuadro* aux;
+    int j;
     for(int i = 0; i < 4; i++){
-        aux = getPtr(i);
-        setPtr(i, c->getPtr(i));
-        c->setPtr(i, aux);
+          j = ((i + 2) % 4);
+        cout << "movi punteros " << i << endl;
+        aux = this->getPtr(i); //guarde mi puntero temporal
+        if(aux)
+            aux->setPtr(j, c);
+        if (c->getPtr(i))
+            c->getPtr(i)->setPtr(j, this);
+        this->setPtr(i, c->getPtr(i)); //apunte al del otro
+        c->setPtr(i, aux); //el otroapunte al mio
     }
 }
 

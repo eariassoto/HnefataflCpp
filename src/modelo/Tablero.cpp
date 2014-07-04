@@ -1,54 +1,50 @@
 #include "Tablero.h"
-Tablero::Tablero(int t):dimension(t), matriz(t,t)
+#include <algorithm>
+Tablero::Tablero(int t):dimension(t), vmatriz(t, vector<Cuadro*>(t))
 {
+
 }
 
 
 void Tablero::agregarFicha(int i, int j, Cuadro* c)
 {
-    matriz(i,j) = c;
-    if(i > 0 && matriz(i-1,j))
+    vmatriz[i][j] = c;
+    if(i > 0 && vmatriz[i-1][j])
     {
-        matriz(i,j)->setPtr(Cuadro::ARR, matriz(i-1, j)); //ARR
-        matriz(i-1, j)->setPtr(Cuadro::ABA, matriz(i,j));
+        vmatriz[i][j]->setPtr(Cuadro::ARR, vmatriz[i-1][j]); //ARR
+        vmatriz[i-1][j]->setPtr(Cuadro::ABA, vmatriz[i][j]);
     }
 
-    if(j < (matriz.y()-1) && matriz(i, j+1))
+    if(j < (vmatriz[0].size()-1) && vmatriz[i][j+1])
     {
-        matriz(i,j)->setPtr(Cuadro::DER, matriz(i, j+1)); //DER
-        matriz(i, j+1)->setPtr(Cuadro::IZQ, matriz(i,j));
+        vmatriz[i][j]->setPtr(Cuadro::DER, vmatriz[i][j+1]); //DER
+        vmatriz[i][j+1]->setPtr(Cuadro::IZQ, vmatriz[i][j]);
     }
 
-    if(i < (matriz.x()-1) && matriz(i+1, j))
+    if(i < (vmatriz.size()-1) && vmatriz[i+1][j])
     {
-        matriz(i,j)->setPtr(Cuadro::ABA, matriz(i+1, j)); //ABA
-        matriz(i+1, j)->setPtr(Cuadro::ARR, matriz(i,j));
+        vmatriz[i][j]->setPtr(Cuadro::ABA, vmatriz[i+1][j]); //ABA
+        vmatriz[i+1][j]->setPtr(Cuadro::ARR, vmatriz[i][j]);
     }
-    if(j > 0)
+    if(j > 0 && vmatriz[i][j-1])
     {
-        if(matriz(i,j-1))
-        {
-            matriz(i,j)->setPtr(Cuadro::IZQ, matriz(i, j-1)); //IZQ
-            matriz(i, j-1)->setPtr(Cuadro::DER, matriz(i,j));
-        }
+        vmatriz[i][j]->setPtr(Cuadro::IZQ, vmatriz[i][j-1]); //IZQ
+        vmatriz[i][j-1]->setPtr(Cuadro::DER, vmatriz[i][j]);
     }
-}
-
-void Tablero::imprimir()
-{
-    for(int i = 0; i < dimension; i++)
-        for(int j = 0; j < dimension; j++)
-            cout << "Soy " << i << ", " << j << " " << matriz(i,j) << " ARR: " << matriz(i,j)->getPtr(0) << " DER: " << matriz(i,j)->getPtr(1) << " ABA: " << matriz(i,j)->getPtr(2) << " IZQ: " << matriz(i,j)->getPtr(3) << endl;
 }
 
 bool Tablero::mover(int* f, int* g)
 {
     try
     {
-        matriz(f[0], f[1])->mover(matriz(g[0], g[1]));
-        cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
-        matriz(f[0], f[1])->swap(matriz(g[0], g[1]));
-        cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
+        vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]);
+        vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
+        cout << vmatriz[f[0]][f[1]] << " " << vmatriz[g[0]][g[1]] << endl;
+        swap(vmatriz[f[0]][f[1]], vmatriz[g[0]][g[1]]);
+        cout << vmatriz[f[0]][f[1]] << " " << vmatriz[g[0]][g[1]] << endl;
+       // cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
+      //  matriz(f[0], f[1])->swap(matriz(g[0], g[1]));
+      //  cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
         return true;
     }
     catch(Excepcion e)
@@ -59,5 +55,5 @@ bool Tablero::mover(int* f, int* g)
 
 Cuadro* Tablero::getFicha(int x, int y)
 {
-    return matriz(x,y);
+    return vmatriz[x][y];
 }
