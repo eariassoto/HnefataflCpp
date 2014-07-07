@@ -1,11 +1,7 @@
 #include "Cuadro.h"
 
 
-<<<<<<< HEAD
 Cuadro::Cuadro():cuadroArr(0), cuadroDer(0), cuadroAba(0), cuadroIzq(0) {};
-=======
-Cuadro::Cuadro(Figura* f):figura(f), cuadroArr(0), cuadroDer(0), cuadroAba(0), cuadroIzq(0){};
->>>>>>> 8f6aa708310613660b0f4af8a4e67329a66c11e7
 
 Cuadro* Cuadro::getPtr(int i)
 {
@@ -47,15 +43,9 @@ void Cuadro::swap(Cuadro* c)
 {
     Cuadro* aux;
     int j;
-<<<<<<< HEAD
     for(int i = 0; i < 4; i++)
     {
         j = ((i + 2) % 4);
-=======
-    for(int i = 0; i < 4; i++){
-          j = ((i + 2) % 4);
-        cout << "movi punteros " << i << endl;
->>>>>>> 8f6aa708310613660b0f4af8a4e67329a66c11e7
         aux = this->getPtr(i); //guarde mi puntero temporal
         if(aux)
             aux->setPtr(j, c);
