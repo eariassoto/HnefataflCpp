@@ -37,6 +37,7 @@ bool Tablero::mover(int* f, int* g)
 {
     try
     {
+<<<<<<< HEAD
         if(vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]))
         {
             vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
@@ -48,6 +49,16 @@ bool Tablero::mover(int* f, int* g)
                 f->figura->setVisible(false);
             }
         }
+=======
+        vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]);
+        vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
+        cout << vmatriz[f[0]][f[1]] << " " << vmatriz[g[0]][g[1]] << endl;
+        swap(vmatriz[f[0]][f[1]], vmatriz[g[0]][g[1]]);
+        cout << vmatriz[f[0]][f[1]] << " " << vmatriz[g[0]][g[1]] << endl;
+       // cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
+      //  matriz(f[0], f[1])->swap(matriz(g[0], g[1]));
+      //  cout << matriz(f[0], f[1]) << " " << matriz(g[0], g[1]) << endl;
+>>>>>>> 8f6aa708310613660b0f4af8a4e67329a66c11e7
         return true;
     }
     catch(Excepcion e)
