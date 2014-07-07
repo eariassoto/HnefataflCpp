@@ -5,6 +5,7 @@ class FichaNegra : public Ficha
 {
 public:
     FichaNegra(Figura* f):Ficha(f) {};
-    void comer();
+
+    Cuadro* comer();
 };
 #endif // FICHANEGRA_H_

@@ -42,11 +42,13 @@ int main()
             {
                 figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
+                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::ESQUINA, figura);
+                tablero->agregarFicha(i,j, cuadro);
             }
             break;
             case Mapa::TipoFicha::CUADRO:
             {
-                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::CUADRO, figura);
+                cuadro = FabricaFicha::crearCuadro();
                 tablero->agregarFicha(i,j, cuadro);
             }
             break;
@@ -71,9 +73,6 @@ int main()
                 figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::REY, figura);
-                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal);
-                interfaz->push_figura(figura);
-                cuadro->agregarFiguraTrono(figura);
                 tablero->agregarFicha(i,j, cuadro);
             }
             break;

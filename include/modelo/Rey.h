@@ -5,9 +5,8 @@ class Rey : public FichaBlanca
 {
 public:
     Rey(Figura* f):FichaBlanca(f) {};
-    void comer();
-    void agregarFiguraTrono(Figura*);
-private:
-    Figura* trono;
+
+    bool mover(Cuadro*);
+
 };
 #endif // REY_H_

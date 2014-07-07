@@ -1,15 +1,8 @@
 #include "Cuadro.h"
 
 
-Cuadro::Cuadro(Figura* f):figura(f){};
+Cuadro::Cuadro():cuadroArr(0), cuadroDer(0), cuadroAba(0), cuadroIzq(0) {};
 
-void Cuadro::setPunteros(Cuadro* arr, Cuadro* der, Cuadro* aba, Cuadro* izq)
-{
-    cuadroArr = arr;
-    cuadroAba = aba;
-    cuadroDer = der;
-    cuadroIzq = izq;
-}
 Cuadro* Cuadro::getPtr(int i)
 {
     switch(i)
@@ -46,12 +39,20 @@ void Cuadro::setPtr(int pos, Cuadro* ptr)
     }
 }
 
-void Cuadro::swap(Cuadro* c){
+void Cuadro::swap(Cuadro* c)
+{
     Cuadro* aux;
-    for(int i = 0; i < 4; i++){
-        aux = getPtr(i);
-        setPtr(i, c->getPtr(i));
-        c->setPtr(i, aux);
+    int j;
+    for(int i = 0; i < 4; i++)
+    {
+        j = ((i + 2) % 4);
+        aux = this->getPtr(i); //guarde mi puntero temporal
+        if(aux)
+            aux->setPtr(j, c);
+        if (c->getPtr(i))
+            c->getPtr(i)->setPtr(j, this);
+        this->setPtr(i, c->getPtr(i)); //apunte al del otro
+        c->setPtr(i, aux); //el otroapunte al mio
     }
 }
 
@@ -59,7 +60,8 @@ bool Cuadro::mover(Cuadro*)
 {
     throw Excepcion("Esta ficha es un cuadro, no puede moverse");
 };
-void Cuadro::comer()
+
+Cuadro* Cuadro::comer()
 {
     throw Excepcion("Esta ficha es un cuadro, no puede comer");
 };

@@ -1,6 +1,6 @@
 #include "Ficha.h"
 
-Ficha::Ficha(Figura* f):Cuadro(f) {}
+Ficha::Ficha(Figura* f):figura(f) {}
 
 bool Ficha::mover(Cuadro* c)
 {
@@ -30,9 +30,8 @@ bool Ficha::mover(Cuadro* c)
     }
     if(encontrado)
     {
-        cout << "tengo que dar " << pasos << " pasos " << endl;
         moverFigura(pos, pasos);
-        return true;//coord;
+        return true;
     }
     else
     {
@@ -42,11 +41,14 @@ bool Ficha::mover(Cuadro* c)
 
 bool Ficha::esCuadro(Cuadro* c)
 {
-    try{
-    Cuadro* r = dynamic_cast<Ficha*>(c);
-    return !r;
-    }catch(exception& e){
-    cout << e.what();
+    try
+    {
+        Cuadro* r = dynamic_cast<Ficha*>(c);
+        return !r;
+    }
+    catch(exception& e)
+    {
+        cout << e.what();
     }
 
 }
@@ -62,7 +64,6 @@ void Ficha::moverFigura(int pos, int n)
         else
             mag = -2;
         figura->getCirc().move((mag*n*figura->getCirc().getRadius()),0);
-        //figura->getCirc().setFillColor(sf::Color(255,0,0));
     }
     else
     {
@@ -73,3 +74,8 @@ void Ficha::moverFigura(int pos, int n)
         figura->getCirc().move(0,(mag*n*figura->getCirc().getRadius()));
     }
 }
+
+Cuadro* Ficha::comer()
+{
+    throw Excepcion("No puedo comer, soy un ficha sin color");
+};

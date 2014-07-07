@@ -1,14 +1,36 @@
 #include "Rey.h"
 
-void Rey::comer()
+bool Rey::mover(Cuadro* c)
 {
-    cout << "comi\n";
-};
+    int i = 0;
+    bool encontrado = false;
+    bool b = false;
+    int pos = 0;
 
-void Rey::agregarFiguraTrono(Figura* f)
-{
-    trono = f;
-    trono->setVisible(false);
+    while(i < 4 && !encontrado)
+    {
+        Cuadro * vecino = getPtr(i);
+        b = false;
+        while(!b && vecino && esCuadro(vecino))
+        {
+            if(vecino == c)
+            {
+                pos = i;
+                encontrado = true;
+            }
+            b = true;
+        }
+        i++;
+    }
+    if(encontrado)
+    {
+        moverFigura(pos, 1);
+        return true;//coord;
+    }
+    else
+    {
+        throw Excepcion("No se puede mover en esta posicion");
+    }
 }
 
 

@@ -1,8 +1,9 @@
 #include "FichaNegra.h"
 
-void FichaNegra::comer()
+Cuadro* FichaNegra::comer()
 {
-    cout << "comi\n";
+    cout << "comi, aun no me han implementado\n";
+    return 0;
 };
 
 

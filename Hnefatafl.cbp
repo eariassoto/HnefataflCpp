@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-std=c++11" />
+					<Add option="-w" />
 					<Add option="-g" />
 					<Add option="-DSFML_STATIC" />
 					<Add directory="include/interfaz" />
@@ -56,6 +57,7 @@
 		<Unit filename="include/interfaz/Figura.h" />
 		<Unit filename="include/interfaz/Interfaz.h" />
 		<Unit filename="include/modelo/Cuadro.h" />
+		<Unit filename="include/modelo/Esquina.h" />
 		<Unit filename="include/modelo/FabricaFicha.h" />
 		<Unit filename="include/modelo/Ficha.h" />
 		<Unit filename="include/modelo/FichaBlanca.h" />
@@ -71,6 +73,7 @@
 		<Unit filename="src/interfaz/Interfaz.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/modelo/Cuadro.cpp" />
+		<Unit filename="src/modelo/Esquina.cpp" />
 		<Unit filename="src/modelo/Ficha.cpp" />
 		<Unit filename="src/modelo/FichaBlanca.cpp" />
 		<Unit filename="src/modelo/FichaNegra.cpp" />

@@ -25,7 +25,8 @@ void Jugador::seleccionar(int x, int y)
     selY = y;
 }
 
-int* Jugador::getSeleccion(){
+int* Jugador::getSeleccion()
+{
     int* aux = new int[2];
     aux[0] = selX;
     aux[1] = selY;
