@@ -806,24 +806,25 @@
 	"Matriz.h"
 	<map>
 
-1404705545 c:\users\emmanuel\hnefataflcpp\include\modelo\cuadro.h
+1404861828 c:\users\emmanuel\hnefataflcpp\include\modelo\cuadro.h
 	"Excepcion.h"
 	"Figura.h"
 
-1404705525 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
+1404863027 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
 	<vector>
 	<exception>
 	"Cuadro.h"
 	"Excepcion.h"
 
-1404705488 c:\users\emmanuel\hnefataflcpp\include\modelo\fichablanca.h
+1404863066 c:\users\emmanuel\hnefataflcpp\include\modelo\fichablanca.h
 	"Ficha.h"
 	"FichaNegra.h"
+	"Esquina.h"
 
-1404705463 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
+1404863027 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
 	"Ficha.h"
 
-1404705525 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichablanca.cpp
+1404863027 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichablanca.cpp
 	"FichaBlanca.h"
 
 1403312607 c:\users\emmanuel\hnefataflcpp\include\interfaz\sprite.h
@@ -878,17 +879,18 @@
 1404412541 c:\users\emman_000\hnefataflcpp\include\modelo\fichanegra.h
 	"Ficha.h"
 
-1404705610 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichanegra.cpp
+1404863027 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichanegra.cpp
 	"FichaNegra.h"
 
-1404705486 c:\users\emmanuel\hnefataflcpp\include\modelo\fichanegra.h
+1404863066 c:\users\emmanuel\hnefataflcpp\include\modelo\fichanegra.h
 	"Ficha.h"
+	"FichaBlanca.h"
+	"Esquina.h"
 
-1404740062 source:c:\users\emmanuel\hnefataflcpp\src\modelo\tablero.cpp
+1404862771 source:c:\users\emmanuel\hnefataflcpp\src\modelo\tablero.cpp
 	"Tablero.h"
-	<algorithm>
 
-1404740062 c:\users\emmanuel\hnefataflcpp\include\modelo\tablero.h
+1404861906 c:\users\emmanuel\hnefataflcpp\include\modelo\tablero.h
 	<iostream>
 	<vector>
 	<algorithm>
@@ -926,7 +928,7 @@
 	<map>
 	<stdexcept>
 
-1404705573 source:c:\users\emmanuel\hnefataflcpp\src\modelo\cuadro.cpp
+1404860265 source:c:\users\emmanuel\hnefataflcpp\src\modelo\cuadro.cpp
 	"Cuadro.h"
 
 1404504398 c:\users\emmanuel\hnefataflcpp\include\modelo\mapa.h
@@ -1333,9 +1335,9 @@
 1404412542 source:c:\users\emman_000\hnefataflcpp\src\modelo\jugador.cpp
 	"Jugador.h"
 
-1404705369 source:c:\users\emmanuel\hnefataflcpp\src\modelo\esquina.cpp
+1404861628 source:c:\users\emmanuel\hnefataflcpp\src\modelo\esquina.cpp
 	"Esquina.h"
 
-1404705369 c:\users\emmanuel\hnefataflcpp\include\modelo\esquina.h
+1404861524 c:\users\emmanuel\hnefataflcpp\include\modelo\esquina.h
 	"Cuadro.h"
 

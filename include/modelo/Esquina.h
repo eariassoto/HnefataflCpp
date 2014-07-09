@@ -8,7 +8,7 @@ public:
 
     Esquina(Figura*);
 
-    //TODO protected
+protected:
     Figura* figura;
 };
 #endif // _ESQUINA_H_

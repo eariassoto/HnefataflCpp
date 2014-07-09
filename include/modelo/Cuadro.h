@@ -13,7 +13,7 @@ public:
 
     //cosas que tiran excepciones, mera prevencion
     virtual bool    mover(Cuadro*);
-    virtual Cuadro* comer();
+    virtual vector<Cuadro*> comer();
 
     virtual Cuadro* getPtr(int);
     virtual void    setPtr(int, Cuadro*);
@@ -21,8 +21,7 @@ public:
 
     static const int ARR = 0, DER = 1, ABA = 2, IZQ = 3;
 
-/// TODO protected:
-
+protected:
     Cuadro *cuadroArr, *cuadroDer, *cuadroAba, *cuadroIzq;
 };
 #endif // _CUADRO_H_

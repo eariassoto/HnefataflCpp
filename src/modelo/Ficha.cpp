@@ -75,7 +75,23 @@ void Ficha::moverFigura(int pos, int n)
     }
 }
 
-Cuadro* Ficha::comer()
+vector<Cuadro*> Ficha::comer()
 {
-    throw Excepcion("No puedo comer, soy un ficha sin color");
+    int i = 0;
+    vector<Cuadro*> v;
+    while(i<4)
+    {
+        if(esEnemigo(getPtr(i)))
+            if(esAliado(getPtr(i)->getPtr(i)))
+            {
+                v.push_back(getPtr(i));
+            }
+        i++;
+    }
+    return v;
 };
+
+void Ficha::setFiguraVisible(bool b)
+{
+    figura->setVisible(b);
+}

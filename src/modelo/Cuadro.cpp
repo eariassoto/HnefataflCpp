@@ -61,7 +61,7 @@ bool Cuadro::mover(Cuadro*)
     throw Excepcion("Esta ficha es un cuadro, no puede moverse");
 };
 
-Cuadro* Cuadro::comer()
+vector<Cuadro*> Cuadro::comer()
 {
     throw Excepcion("Esta ficha es un cuadro, no puede comer");
 };

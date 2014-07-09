@@ -1,20 +1,5 @@
 #include "FichaBlanca.h"
 
-Cuadro* FichaBlanca::comer()
-{
-    int i = 0;
-    while(i<4)
-    {
-        if(esEnemigo(getPtr(i)))
-            if(esAliado(getPtr(i)->getPtr(i)))
-            {
-                return getPtr(i);
-            }
-        i++;
-    }
-    return 0;
-};
-
 bool FichaBlanca::esEnemigo(Cuadro* c)
 {
     Cuadro* r = dynamic_cast<FichaNegra*>(c);
@@ -34,8 +19,15 @@ bool FichaBlanca::esAliado(Cuadro* c)
         }
         else
         {
-            return false;
+            r = dynamic_cast<Esquina*>(c);
+            if(r)
+                return true;
+            else
+                return false;
         }
     }
 }
+
+
+
 

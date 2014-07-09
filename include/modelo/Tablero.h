@@ -17,8 +17,10 @@ public:
     void    imprimir();
     bool    mover(int*, int*);
     Cuadro* getFicha(int, int);
+    void    setFiguraVisible(Cuadro*, bool);
+    void    comer(vector<Cuadro*>);
 
-//private:
+private:
     vector< vector<Cuadro*> > vmatriz;
     int             dimension;
 };
