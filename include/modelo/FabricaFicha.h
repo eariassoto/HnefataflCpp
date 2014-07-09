@@ -3,10 +3,11 @@
 #include "Excepcion.h"
 #include "Figura.h"
 #include "Cuadro.h"
+#include "Ficha.h"
 #include "FichaBlanca.h"
 #include "FichaNegra.h"
-#include "Rey.h"
 #include "Esquina.h"
+#include "Rey.h"
 class FabricaFicha
 {
 public:

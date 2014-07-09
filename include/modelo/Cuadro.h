@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _CUADRO_H_
 #define _CUADRO_H_
 #include "Excepcion.h"
