@@ -1,10 +1,11 @@
 #include "Ficha.h"
 #include "Excepcion.h"
 #include "Esquina.h"
+#include "Trono.h"
 
 Ficha::Ficha(Figura* f):figura(f) {}
 
-bool Ficha::mover(Cuadro* c)
+Cuadro* Ficha::mover(Cuadro* c)
 {
     int i = 0;
     bool encontrado = false;
@@ -33,11 +34,12 @@ bool Ficha::mover(Cuadro* c)
     if(encontrado)
     {
         moverFigura(pos, pasos);
-        return true;
+        return c;
     }
     else
     {
-        throw Excepcion("No se puede mover en esta posicion");
+        cout <<"no se puede mover aqui" << endl;
+        return 0;
     }
 }
 
@@ -48,18 +50,23 @@ bool Ficha::esCuadro(Cuadro* c)
         Cuadro* r = dynamic_cast<Ficha*>(c);
         if(r)
             return !r;
-        else{
+        else
+        {
             r = dynamic_cast<Esquina*>(c);
-            return !r;
+            if(r)
+                return !r;
+            else
+            {
+                r = dynamic_cast<Trono*>(c);
+                return !r;
+            }
         }
     }
     catch(exception& e)
     {
         cout << e.what();
     }
-
 }
-///todo probar el esCuadro() con las clases derivadas hijas
 
 void Ficha::moverFigura(int pos, int n)
 {

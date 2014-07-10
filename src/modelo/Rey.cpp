@@ -1,7 +1,9 @@
 #include "Rey.h"
 #include "Trono.h"
+#include "Esquina.h"
+#include "Excepcion.h"
 
-bool Rey::mover(Cuadro* c)
+Cuadro* Rey::mover(Cuadro* c)
 {
     int i = 0;
     bool encontrado = false;
@@ -26,17 +28,62 @@ bool Rey::mover(Cuadro* c)
     if(encontrado)
     {
         moverFigura(pos, 1);
+        if(trono == reserva)
+        {
+            cout << "cambiotrono" << endl;
+            Trono* t = dynamic_cast<Trono*>(trono);
+            t->setFiguraVisible(true);
 
-        Trono* t = dynamic_cast<Trono*>(trono);
-        t->setFiguraVisible(true);
-        ///asdfgh
-
-        return true;//coord;
+            reserva = c;
+            for(int i = 0; i < 4; i++)
+            {
+                trono->setPtr(i, c->getPtr(i));
+            }
+            return trono;
+        }
+        else if(trono == c)
+        {
+            Cuadro * ret = reserva;
+            for(int i = 0; i < 4; i++)
+            {
+                reserva->setPtr(i, c->getPtr(i));
+            }
+            reserva = c;
+            return ret;
+        }
+        else
+        {
+            return c;
+        }
     }
     else
     {
-        throw Excepcion("No se puede mover en esta posicion");
+        cout <<"no se puede mover aqui dice el rey" << endl;
+        return 0;
     }
 }
 
-
+bool Rey::esCuadro(Cuadro* c)
+{
+    try
+    {
+        Cuadro* r = dynamic_cast<Ficha*>(c);
+        if(r)
+            return !r;
+        else
+        {
+            r = dynamic_cast<Esquina*>(c);
+            if(r)
+                return !r;
+            else
+            {
+                r = dynamic_cast<Trono*>(c);
+                return !r;
+            }
+        }
+    }
+    catch(exception& e)
+    {
+        cout << e.what();
+    }
+}

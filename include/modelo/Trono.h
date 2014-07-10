@@ -11,6 +11,7 @@ public:
     {
         figura->setVisible(false);
     };
+    virtual void tell(){cout << "soy trono" << endl;};
 
     void setFiguraVisible(bool b)
     {

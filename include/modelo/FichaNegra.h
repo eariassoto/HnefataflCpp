@@ -14,5 +14,6 @@ public:
     bool            esAliado(Cuadro*);
     Cuadro*         esRey(Cuadro*, int);
     bool            esAliadoContraRey(Cuadro*, int);
+    virtual void tell(){cout << "soy negra" << endl;};
 };
 #endif // FICHANEGRA_H_

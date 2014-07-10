@@ -40,13 +40,17 @@ bool Tablero::mover(int* f, int* g)
 {
     try
     {
-        if(vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]))
+        Cuadro* cambio = vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]);
+        cout << vmatriz[g[0]][g[1]] << " " << cambio << endl;
+        if(cambio)
         {
+            vmatriz[g[0]][g[1]] = cambio;
             vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
             swap(vmatriz[f[0]][f[1]], vmatriz[g[0]][g[1]]);
             comer(vmatriz[g[0]][g[1]]->comer());
         }
         return true;
+
     }
     catch(Excepcion e)
     {
@@ -74,6 +78,7 @@ void Tablero::comer(vector<Cuadro*> respComer)
             cout << "tengo que comer al rey" << endl;
         else
         {
+            cout << "como " << respComer[0] << endl;
             for(vector<Cuadro*>::iterator it = respComer.begin(); it != respComer.end(); it++)
             {
                 setFiguraVisible(*it, false);

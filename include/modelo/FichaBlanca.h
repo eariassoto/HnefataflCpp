@@ -8,5 +8,6 @@ public:
     FichaBlanca(Figura* f):Ficha(f) {};
     virtual bool esEnemigo(Cuadro*);
     virtual bool esAliado(Cuadro*);
+    virtual void tell(){cout << "soy blanca" << endl;};
 };
 #endif // _FICHABLANCA_H_

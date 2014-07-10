@@ -13,13 +13,13 @@ class Ficha: public Cuadro
 public:
     Ficha(Figura*);
 
-    virtual bool    mover(Cuadro*);
+    virtual Cuadro*         mover(Cuadro*);
     virtual vector<Cuadro*> comer();
-    virtual bool    esCuadro(Cuadro*);
-    virtual void    moverFigura(int, int);
-    virtual void    setFiguraVisible(bool);
-    virtual bool    esEnemigo(Cuadro*)=0;
-    virtual bool    esAliado(Cuadro*)=0;
+    virtual bool            esCuadro(Cuadro*);
+    virtual void            moverFigura(int, int);
+    virtual void            setFiguraVisible(bool);
+    virtual bool            esEnemigo(Cuadro*)=0;
+    virtual bool            esAliado(Cuadro*)=0;
 
 protected:
     Figura *figura;

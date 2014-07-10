@@ -105,6 +105,7 @@ int main()
                     int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
                     if(!jugador->seleccion)
                     {
+                        tablero->getFicha(coord[0], coord[1])->tell();
                         if(jugador->esFichaMia(tablero->getFicha(coord[0], coord[1])))
                         {
                             cout << "seleccione " << coord[0] << ", " << coord[1] << endl;

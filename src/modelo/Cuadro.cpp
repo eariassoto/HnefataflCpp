@@ -38,7 +38,23 @@ void Cuadro::setPtr(int pos, Cuadro* ptr)
         throw Excepcion("rango fuera filas");
     }
 }
-
+/*
+void Cuadro::swap(Cuadro* c)
+{
+    Cuadro* aux;
+    int j;
+    for(int i = 0; i < 4; i++)
+    {
+        j = ((i + 2) % 4);
+        aux = this->getPtr(i); //guarde mi puntero temporal
+        if(aux)
+            aux->setPtr(j, c);
+        if (c->getPtr(i))
+            c->getPtr(i)->setPtr(j, this);
+        this->setPtr(i, c->getPtr(i)); //apunte al del otro
+        c->setPtr(i, aux); //el otroapunte al mio
+    }
+}*/
 void Cuadro::swap(Cuadro* c)
 {
     Cuadro* aux;
@@ -56,7 +72,7 @@ void Cuadro::swap(Cuadro* c)
     }
 }
 
-bool Cuadro::mover(Cuadro*)
+Cuadro* Cuadro::mover(Cuadro*)
 {
     throw Excepcion("Esta ficha es un cuadro, no puede moverse");
 };
