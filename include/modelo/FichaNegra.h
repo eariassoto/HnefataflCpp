@@ -2,15 +2,17 @@
 #define FICHANEGRA_H_
 #include "Ficha.h"
 #include "FichaBlanca.h"
-#include "Rey.h"
 #include "Esquina.h"
+
 
 class FichaNegra : public Ficha
 {
 public:
     FichaNegra(Figura* f):Ficha(f) {};
     vector<Cuadro*> comer();
-    virtual bool    esEnemigo(Cuadro*);
-    virtual bool    esAliado(Cuadro*);
+    bool            esEnemigo(Cuadro*);
+    bool            esAliado(Cuadro*);
+    Cuadro*         esRey(Cuadro*, int);
+    bool            esAliadoContraRey(Cuadro*, int);
 };
 #endif // FICHANEGRA_H_

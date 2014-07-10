@@ -1,4 +1,6 @@
 #include "Jugador.h"
+#include "FichaBlanca.h"
+#include "FichaNegra.h"
 
 Jugador::Jugador(TipoFicha tF):tipoFicha(tF)
 {

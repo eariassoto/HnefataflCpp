@@ -1,4 +1,6 @@
 #include "Ficha.h"
+#include "Excepcion.h"
+#include "Esquina.h"
 
 Ficha::Ficha(Figura* f):figura(f) {}
 
@@ -44,7 +46,12 @@ bool Ficha::esCuadro(Cuadro* c)
     try
     {
         Cuadro* r = dynamic_cast<Ficha*>(c);
-        return !r;
+        if(r)
+            return !r;
+        else{
+            r = dynamic_cast<Esquina*>(c);
+            return !r;
+        }
     }
     catch(exception& e)
     {

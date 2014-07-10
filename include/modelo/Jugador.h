@@ -1,9 +1,6 @@
 #ifndef JUGADOR_H_
 #define JUGADOR_H_
-#include <memory>
 #include "Cuadro.h"
-#include "FichaBlanca.h"
-#include "FichaNegra.h"
 
 class Jugador
 {
@@ -19,7 +16,6 @@ public:
     bool esFichaMia(Cuadro*);
     void seleccionar(int, int);
     int* getSeleccion();
-
     bool seleccion;
 
 private:

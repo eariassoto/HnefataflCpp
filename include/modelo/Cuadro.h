@@ -1,7 +1,6 @@
 #ifndef _CUADRO_H_
 #define _CUADRO_H_
-#include "Excepcion.h"
-#include "Figura.h"
+#include <vector>
 
 using namespace std;
 

@@ -1,9 +1,10 @@
 #ifndef FICHA_H_
 #define FICHA_H_
 #include <vector>
-#include <exception>
+
 #include "Cuadro.h"
-#include "Excepcion.h"
+#include "Figura.h"
+
 
 using namespace std;
 

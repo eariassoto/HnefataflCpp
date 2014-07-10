@@ -1,4 +1,6 @@
 #include "FichaBlanca.h"
+#include "FichaNegra.h"
+#include "Esquina.h"
 
 bool FichaBlanca::esEnemigo(Cuadro* c)
 {

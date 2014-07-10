@@ -28,6 +28,7 @@ int main()
     shared_ptr<Jugador> jugador2(new Jugador(Jugador::TipoFicha::NEGRA));
     shared_ptr<Jugador> jugador = jugador1;
 
+
     for(int i = 0; i < dimension; i++)
     {
         for(int j = 0; j < dimension; j++)
@@ -70,9 +71,15 @@ int main()
             break;
             case Mapa::TipoFicha::REY:
             {
+
+                ///creo el trono
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal);
+                interfaz->push_figura(figura);
+                Cuadro* trono = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::TRONO, figura);
+                ///creo el rey
                 figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
-                cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::REY, figura);
+                cuadro = FabricaFicha::crearRey(figura, trono);
                 tablero->agregarFicha(i,j, cuadro);
             }
             break;

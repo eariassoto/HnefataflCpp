@@ -1,12 +1,13 @@
 #ifndef _ESQUINA_H_
 #define _ESQUINA_H_
+
 #include "Cuadro.h"
+#include "Figura.h"
+
 class Esquina: public Cuadro
 {
-
 public:
-
-    Esquina(Figura*);
+    Esquina(Figura* f): figura(f), Cuadro(){};
 
 protected:
     Figura* figura;

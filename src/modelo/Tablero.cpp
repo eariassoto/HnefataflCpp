@@ -1,4 +1,7 @@
 #include "Tablero.h"
+#include <iostream>
+#include <algorithm>
+#include "FabricaFicha.h"
 
 Tablero::Tablero(int t):dimension(t), vmatriz(t, vector<Cuadro*>(t))
 {
@@ -66,20 +69,25 @@ void Tablero::comer(vector<Cuadro*> respComer)
 {
     if(!respComer.empty())
     {
-        for(vector<Cuadro*>::iterator it = respComer.begin(); it != respComer.end(); it++)
+        Cuadro * r = dynamic_cast<Rey*> (respComer[0]);
+        if(r)
+            cout << "tengo que comer al rey" << endl;
+        else
         {
-            setFiguraVisible(*it, false);
-            for(vector<Cuadro*>::size_type i = 0; i != vmatriz.size(); i++)
-                for(vector<Cuadro*>::size_type j = 0; j != vmatriz[0].size(); j++)
-                {
-                    if(vmatriz[i][j] == *it)
+            for(vector<Cuadro*>::iterator it = respComer.begin(); it != respComer.end(); it++)
+            {
+                setFiguraVisible(*it, false);
+                for(vector<Cuadro*>::size_type i = 0; i != vmatriz.size(); i++)
+                    for(vector<Cuadro*>::size_type j = 0; j != vmatriz[0].size(); j++)
                     {
-                        Cuadro* reemplazo = FabricaFicha::crearCuadro();
-                        vmatriz[i][j]->swap(reemplazo);
-                        vmatriz[i][j] = reemplazo;
+                        if(vmatriz[i][j] == *it)
+                        {
+                            Cuadro* reemplazo = FabricaFicha::crearCuadro();
+                            vmatriz[i][j]->swap(reemplazo);
+                            vmatriz[i][j] = reemplazo;
+                        }
                     }
-                }
+            }
         }
-
     }
 }

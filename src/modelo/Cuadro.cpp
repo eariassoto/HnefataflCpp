@@ -1,5 +1,5 @@
 #include "Cuadro.h"
-
+#include "Excepcion.h"
 
 Cuadro::Cuadro():cuadroArr(0), cuadroDer(0), cuadroAba(0), cuadroIzq(0) {};
 

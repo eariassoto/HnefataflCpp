@@ -1,8 +1,6 @@
 #ifndef _FICHABLANCA_H_
 #define _FICHABLANCA_H_
 #include "Ficha.h"
-#include "FichaNegra.h"
-#include "Esquina.h"
 
 class FichaBlanca : public Ficha
 {

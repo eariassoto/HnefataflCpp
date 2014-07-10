@@ -1,4 +1,8 @@
 #include "Mapa.h"
+#include <iostream>
+#include <vector>
+#include <stdexcept>
+
 Mapa::Mapa(string p): Archivo(p)
 {
     dimension = leerEntero(0);

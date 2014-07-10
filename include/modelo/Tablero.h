@@ -1,11 +1,7 @@
 #ifndef _TABLERO_H_
 #define _TABLERO_H_
-#include <iostream>
 #include <vector>
-#include <algorithm>
-#include "Matriz.h"
 #include "Cuadro.h"
-#include "FabricaFicha.h"
 
 using namespace std;
 
@@ -22,6 +18,6 @@ public:
 
 private:
     vector< vector<Cuadro*> > vmatriz;
-    int             dimension;
+    int                       dimension;
 };
 #endif // _TABLERO_H_

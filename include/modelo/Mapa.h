@@ -1,9 +1,8 @@
 #ifndef MAPA_H_
 #define MAPA_H_
-#include "Archivo.h"
-#include <iostream>
 #include <map>
-#include <stdexcept>
+#include <string>
+#include "Archivo.h"
 
 class Mapa: public Archivo
 {

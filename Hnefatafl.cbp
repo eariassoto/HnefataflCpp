@@ -66,6 +66,7 @@
 		<Unit filename="include/modelo/Mapa.h" />
 		<Unit filename="include/modelo/Rey.h" />
 		<Unit filename="include/modelo/Tablero.h" />
+		<Unit filename="include/modelo/Trono.h" />
 		<Unit filename="include/utilidades/Archivo.h" />
 		<Unit filename="include/utilidades/Excepcion.h" />
 		<Unit filename="include/utilidades/Matriz.h" />
@@ -73,7 +74,6 @@
 		<Unit filename="src/interfaz/Interfaz.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/modelo/Cuadro.cpp" />
-		<Unit filename="src/modelo/Esquina.cpp" />
 		<Unit filename="src/modelo/Ficha.cpp" />
 		<Unit filename="src/modelo/FichaBlanca.cpp" />
 		<Unit filename="src/modelo/FichaNegra.cpp" />

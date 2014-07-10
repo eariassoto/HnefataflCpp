@@ -1,4 +1,5 @@
 #include "Rey.h"
+#include "Trono.h"
 
 bool Rey::mover(Cuadro* c)
 {
@@ -25,6 +26,11 @@ bool Rey::mover(Cuadro* c)
     if(encontrado)
     {
         moverFigura(pos, 1);
+
+        Trono* t = dynamic_cast<Trono*>(trono);
+        t->setFiguraVisible(true);
+        ///asdfgh
+
         return true;//coord;
     }
     else

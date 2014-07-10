@@ -3,10 +3,13 @@
 #include "Excepcion.h"
 #include "Figura.h"
 #include "Cuadro.h"
+#include "Ficha.h"
 #include "FichaBlanca.h"
 #include "FichaNegra.h"
-#include "Rey.h"
 #include "Esquina.h"
+#include "Rey.h"
+#include "Trono.h"
+
 class FabricaFicha
 {
 public:
@@ -15,13 +18,17 @@ public:
     {
         BLANCA,
         NEGRA,
-        REY,
+        TRONO,
         ESQUINA
     };
 
     static Cuadro* crearCuadro()
     {
         return new Cuadro();
+    }
+
+    static Cuadro* crearRey(Figura* f, Cuadro* t){
+        return new Rey(f, t);
     }
 
     static Cuadro* crearFicha(TipoFicha tipoFicha, Figura* f)
@@ -32,8 +39,8 @@ public:
             return new FichaBlanca(f);
         case NEGRA:
             return new FichaNegra(f);
-        case REY:
-            return new Rey(f);
+        case TRONO:
+            return new Trono(f);
         case ESQUINA:
             return new Esquina(f);
         }
