@@ -3,13 +3,13 @@
 #include <algorithm>
 #include "FabricaFicha.h"
 
-Tablero::Tablero(int t):dimension(t), vmatriz(t, vector<Cuadro*>(t))
+Tablero::Tablero(int t):dimension(t), vmatriz(t, vector< shared_ptr<Cuadro> >(t))
 {
 
 }
 
 
-void Tablero::agregarFicha(int i, int j, Cuadro* c)
+void Tablero::agregarFicha(int i, int j, shared_ptr<Cuadro> c)
 {
     vmatriz[i][j] = c;
     if(i > 0 && vmatriz[i-1][j])
@@ -40,7 +40,7 @@ bool Tablero::mover(int* f, int* g)
 {
     try
     {
-        Cuadro* cambio = vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]);
+        shared_ptr<Cuadro> cambio = vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]);
         if(cambio)
         {
             vmatriz[g[0]][g[1]] = cambio;
@@ -61,37 +61,36 @@ bool Tablero::mover(int* f, int* g)
     }
 }
 
-Cuadro* Tablero::getFicha(int x, int y)
+shared_ptr<Cuadro> Tablero::getFicha(int x, int y)
 {
     return vmatriz[x][y];
 }
 
-void Tablero::setFiguraVisible(Cuadro * c, bool b)
+void Tablero::setFiguraVisible(shared_ptr<Cuadro> c, bool b)
 {
-    Ficha * f = dynamic_cast<Ficha*> (c);
+    shared_ptr<Ficha> f = dynamic_pointer_cast<Ficha> (c);
     f->setFiguraVisible(b);
 }
 
-void Tablero::comer(vector<Cuadro*> respComer)
+void Tablero::comer(vector< shared_ptr<Cuadro> > respComer)
 {
-    cout << "enre a comer" << endl;
     if(!respComer.empty())
     {
-        Cuadro * r = dynamic_cast<Rey*> (respComer[0]);
+        shared_ptr<Cuadro> r = dynamic_pointer_cast<Rey> (respComer[0]);
         if(r)
             cout << "tengo que comer al rey" << endl;
         else
         {
             cout << "como " << respComer[0] << endl;
-            for(vector<Cuadro*>::iterator it = respComer.begin(); it != respComer.end(); it++)
+            for(vector< shared_ptr<Cuadro> >::iterator it = respComer.begin(); it != respComer.end(); it++)
             {
                 setFiguraVisible(*it, false);
-                for(vector<Cuadro*>::size_type i = 0; i != vmatriz.size(); i++)
-                    for(vector<Cuadro*>::size_type j = 0; j != vmatriz[0].size(); j++)
+                for(vector< shared_ptr<Cuadro> >::size_type i = 0; i != vmatriz.size(); i++)
+                    for(vector< shared_ptr<Cuadro> >::size_type j = 0; j != vmatriz[0].size(); j++)
                     {
                         if(vmatriz[i][j] == *it)
                         {
-                            Cuadro* reemplazo = FabricaFicha::crearCuadro();
+                            shared_ptr<Cuadro> reemplazo = FabricaFicha::crearCuadro();
                             vmatriz[i][j]->swap(reemplazo);
                             vmatriz[i][j] = reemplazo;
                         }

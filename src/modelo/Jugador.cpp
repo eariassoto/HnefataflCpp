@@ -9,14 +9,28 @@ Jugador::Jugador(TipoFicha tF):tipoFicha(tF)
     selY = -1;
 };
 
-bool Jugador::esFichaMia(Cuadro* c)
+bool Jugador::esFichaMia(shared_ptr<Cuadro> c)
 {
     switch(tipoFicha)
     {
     case BLANCA:
-        return dynamic_cast<FichaBlanca*>(c);
+    {
+        shared_ptr<Cuadro> f = dynamic_pointer_cast<FichaBlanca>(c);
+        if(f)
+            return true;
+        else
+            return false;
+    }
+    break;
     case NEGRA:
-        return dynamic_cast<FichaNegra*>(c);
+    {
+        shared_ptr<Cuadro> f = dynamic_pointer_cast<FichaNegra>(c);
+        if(f)
+            return true;
+        else
+            return false;
+    }
+    break;
     }
 }
 

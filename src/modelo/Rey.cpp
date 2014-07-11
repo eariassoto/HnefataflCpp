@@ -3,7 +3,7 @@
 #include "Esquina.h"
 #include "Excepcion.h"
 
-Cuadro* Rey::mover(shared_ptr<Cuadro> c)
+shared_ptr<Cuadro> Rey::mover(shared_ptr<Cuadro> c)
 {
     int i = 0;
     bool encontrado = false;
@@ -12,7 +12,7 @@ Cuadro* Rey::mover(shared_ptr<Cuadro> c)
 
     while(i < 4 && !encontrado)
     {
-        Cuadro * vecino = getPtr(i);
+        shared_ptr<Cuadro> vecino = getPtr(i);
         b = false;
         while(!b && vecino && esCuadro(vecino))
         {
@@ -31,7 +31,7 @@ Cuadro* Rey::mover(shared_ptr<Cuadro> c)
         if(trono == reserva)
         {
             cout << "cambiotrono" << endl;
-            shared_ptr<Trono> t = dynamic_pointer_cast<Trono>(trono);//dynamic_cast<shared_ptr<Trono> >(trono);
+            shared_ptr<Trono> t = dynamic_pointer_cast<Trono>(trono);
             t->setFiguraVisible(true);
 
             reserva = c;
@@ -43,10 +43,10 @@ Cuadro* Rey::mover(shared_ptr<Cuadro> c)
         }
         else if(trono == c)
         {
-            cout << "he aqui el puto!" << endl;
-            Trono* t = dynamic_cast<Trono*>(trono);
+            shared_ptr<Trono> t = dynamic_pointer_cast<Trono>(trono);
             t->setFiguraVisible(false);
-            Cuadro * ret = reserva;
+
+            shared_ptr<Cuadro> ret = reserva;
             for(int i = 0; i < 4; i++)
             {
                 reserva->setPtr(i, c->getPtr(i));
@@ -66,12 +66,15 @@ Cuadro* Rey::mover(shared_ptr<Cuadro> c)
     }
 }
 
-bool Rey::esCuadro(Cuadro* c)
+bool Rey::esCuadro(shared_ptr<Cuadro> c)
 {
     try
     {
-        Cuadro* r = dynamic_cast<Ficha*>(c);
-        return !r;
+        shared_ptr<Cuadro> r = dynamic_pointer_cast<Ficha>(c);
+        if(!r)
+            return true;
+        else
+            return false;
     }
     catch(exception& e)
     {

@@ -3,16 +3,16 @@
 #include "FichaBlanca.h"
 #include "Rey.h"
 
-vector<Cuadro*> FichaNegra::comer()
+vector< shared_ptr<Cuadro> > FichaNegra::comer()
 {
     cout << "este rollo" << endl;
     int i = 0;
-    vector<Cuadro*> v;
+    vector< shared_ptr<Cuadro> > v;
     while(i<4)
     {
         if(getPtr(i))
         {
-            Cuadro * r = esRey(getPtr(i), i);
+            shared_ptr<Cuadro> r = esRey(getPtr(i), i);
             if(r)
             {
                 int j = 0;
@@ -44,33 +44,36 @@ vector<Cuadro*> FichaNegra::comer()
     return Ficha::comer();
 };
 
-bool FichaNegra::esEnemigo(Cuadro* c)
+bool FichaNegra::esEnemigo(shared_ptr<Cuadro> c)
 {
 
-    Cuadro* r = dynamic_cast<Rey*>(c);
+    shared_ptr<Cuadro> r = dynamic_pointer_cast<Rey>(c);
     if(r)
         return false;
     else
     {
-        r = dynamic_cast<FichaBlanca*>(c);
-        return r;
+        r = dynamic_pointer_cast<FichaBlanca>(c);
+        if(r)
+            return true;
+        else
+            return false;
     }
 }
 
-bool FichaNegra::esAliado(Cuadro* c)
+bool FichaNegra::esAliado(shared_ptr<Cuadro> c)
 {
     if(c == 0)
         return true;
     else
     {
-        Cuadro* r = dynamic_cast<FichaNegra*>(c);
+        shared_ptr<Cuadro> r = dynamic_pointer_cast<FichaNegra>(c);
         if(r)
         {
             return true;
         }
         else
         {
-            r = dynamic_cast<Esquina*>(c);
+            r = dynamic_pointer_cast<Esquina>(c);
             if(r)
                 return true;
             else
@@ -79,21 +82,21 @@ bool FichaNegra::esAliado(Cuadro* c)
     }
 }
 
-Cuadro* FichaNegra::esRey(Cuadro* c, int i)
+shared_ptr<Cuadro> FichaNegra::esRey(shared_ptr<Cuadro> c, int i)
 {
-    Cuadro* r;
+    shared_ptr<Cuadro> r;
     if(c)
     {
-        r = dynamic_cast<Rey*>(c);
+        r = dynamic_pointer_cast<Rey>(c);
         if(!r && c->getPtr(i))
         {
-            r = dynamic_cast<Rey*>(c->getPtr(i));
+            r = dynamic_pointer_cast<Rey>(c->getPtr(i));
         }
     }
     return r;
 }
 
-bool FichaNegra::esAliadoContraRey(Cuadro* c, int i)
+bool FichaNegra::esAliadoContraRey(shared_ptr<Cuadro> c, int i)
 {
     if(FichaNegra::esAliado(c))
     {
@@ -101,11 +104,14 @@ bool FichaNegra::esAliadoContraRey(Cuadro* c, int i)
     }
     else
     {
-        Cuadro* f = dynamic_cast<FichaBlanca*>(c);
+        shared_ptr<Cuadro> f = dynamic_pointer_cast<FichaBlanca>(c);
         if(f)
         {
-            Cuadro* fN = dynamic_cast<FichaNegra*>(c->getPtr(i));
-            return fN;
+            shared_ptr<Cuadro> fN = dynamic_pointer_cast<FichaNegra>(c->getPtr(i));
+            if(fN)
+                return true;
+            else
+                return false;
         }
     }
 }

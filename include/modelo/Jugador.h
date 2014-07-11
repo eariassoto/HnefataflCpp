@@ -13,7 +13,7 @@ public:
     Jugador(TipoFicha);
     int x, y;
 
-    bool esFichaMia(Cuadro*);
+    bool esFichaMia(shared_ptr<Cuadro>);
     void seleccionar(int, int);
     int* getSeleccion();
     bool seleccion;

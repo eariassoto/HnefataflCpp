@@ -47,17 +47,18 @@ bool Ficha::esCuadro(shared_ptr<Cuadro> c)
 {
     try
     {
-        Cuadro* r = dynamic_cast<Ficha*>(c);
+        shared_ptr<Cuadro> r = dynamic_pointer_cast<Ficha>(c);
+        //Cuadro* r = dynamic_cast<Ficha*>(c);
         if(r)
             return !r;
         else
         {
-            r = dynamic_cast<Esquina*>(c);
+            r = dynamic_pointer_cast<Esquina>(c);
             if(r)
                 return !r;
             else
             {
-                r = dynamic_cast<Trono*>(c);
+                r = dynamic_pointer_cast<Trono>(c);
                 return !r;
             }
         }

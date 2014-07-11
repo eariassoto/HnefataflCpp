@@ -826,13 +826,13 @@
 	<memory>
 	"Ficha.h"
 
-1405030017 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
+1405087833 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
 	"Ficha.h"
 	"Excepcion.h"
 	"Esquina.h"
 	"Trono.h"
 
-1405038656 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichablanca.cpp
+1405087948 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichablanca.cpp
 	"FichaBlanca.h"
 	"FichaNegra.h"
 	"Esquina.h"
@@ -893,7 +893,7 @@
 	"FichaBlanca.h"
 	"Esquina.h"
 
-1405038656 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichanegra.cpp
+1405088165 source:c:\users\emmanuel\hnefataflcpp\src\modelo\fichanegra.cpp
 	"FichaNegra.h"
 	<exception>
 	"FichaBlanca.h"
@@ -911,18 +911,18 @@
 	<algorithm>
 	"FabricaFicha.h"
 
-1405083520 c:\users\emmanuel\hnefataflcpp\include\modelo\tablero.h
+1405106180 c:\users\emmanuel\hnefataflcpp\include\modelo\tablero.h
 	<vector>
 	<memory>
 	"Cuadro.h"
 
-1405035132 source:c:\users\emmanuel\hnefataflcpp\src\modelo\rey.cpp
+1405088307 source:c:\users\emmanuel\hnefataflcpp\src\modelo\rey.cpp
 	"Rey.h"
 	"Trono.h"
 	"Esquina.h"
 	"Excepcion.h"
 
-1405084328 c:\users\emmanuel\hnefataflcpp\include\modelo\rey.h
+1405088232 c:\users\emmanuel\hnefataflcpp\include\modelo\rey.h
 	<memory>
 	"FichaBlanca.h"
 	"Cuadro.h"
@@ -1374,10 +1374,10 @@
 1404412542 source:c:\users\emman_000\downloads\hnefataflcpp-master\hnefataflcpp-master\src\utilidades\archivo.cpp
 	"Archivo.h"
 
-1405038657 c:\users\emmanuel\hnefataflcpp\include\modelo\jugador.h
+1405105884 c:\users\emmanuel\hnefataflcpp\include\modelo\jugador.h
 	"Cuadro.h"
 
-1405038656 source:c:\users\emmanuel\hnefataflcpp\src\modelo\jugador.cpp
+1405106048 source:c:\users\emmanuel\hnefataflcpp\src\modelo\jugador.cpp
 	"Jugador.h"
 	"FichaBlanca.h"
 	"FichaNegra.h"

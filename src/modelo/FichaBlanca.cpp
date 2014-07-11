@@ -2,26 +2,29 @@
 #include "FichaNegra.h"
 #include "Esquina.h"
 
-bool FichaBlanca::esEnemigo(Cuadro* c)
+bool FichaBlanca::esEnemigo(shared_ptr<Cuadro> c)
 {
-    Cuadro* r = dynamic_cast<FichaNegra*>(c);
-    return r;
+    shared_ptr<Cuadro> r = dynamic_pointer_cast<FichaNegra>(c);
+    if(r)
+        return true;
+    else
+        return false;
 }
 
-bool FichaBlanca::esAliado(Cuadro* c)
+bool FichaBlanca::esAliado(shared_ptr<Cuadro> c)
 {
     if(c == 0)
         return true;
     else
     {
-        Cuadro* r = dynamic_cast<FichaBlanca*>(c);
+        shared_ptr<Cuadro> r = dynamic_pointer_cast<FichaBlanca>(c);
         if(r)
         {
             return true;
         }
         else
         {
-            r = dynamic_cast<Esquina*>(c);
+            r = dynamic_pointer_cast<Esquina>(c);
             if(r)
                 return true;
             else

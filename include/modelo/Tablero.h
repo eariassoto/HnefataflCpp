@@ -10,15 +10,15 @@ class Tablero
 {
 public:
     Tablero(int);
-    void    agregarFicha(int, int, shared_ptr<Cuadro>);
-    void    imprimir();
-    bool    mover(int*, int*);
-    Cuadro* getFicha(int, int);
-    void    setFiguraVisible(Cuadro*, bool);
-    void    comer(vector<shared_ptr<Cuadro*> >);
+    void               agregarFicha(int, int, shared_ptr<Cuadro>);
+    void               imprimir();
+    bool               mover(int*, int*);
+    shared_ptr<Cuadro> getFicha(int, int);
+    void               setFiguraVisible(shared_ptr<Cuadro>, bool);
+    void               comer(vector<shared_ptr<Cuadro> >);
 
 private:
     vector< vector<shared_ptr<Cuadro> > > vmatriz;
-    int                       dimension;
+    int                                   dimension;
 };
 #endif // _TABLERO_H_

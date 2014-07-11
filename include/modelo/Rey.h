@@ -9,7 +9,7 @@ class Rey : public FichaBlanca
 public:
     Rey(Figura* f, shared_ptr<Cuadro> t):FichaBlanca(f), trono(t), reserva(t) {};
     shared_ptr<Cuadro> mover(shared_ptr<Cuadro>);
-    bool esCuadro(Cuadro* c);
+    bool esCuadro(shared_ptr<Cuadro> c);
 
     //TODO define scope
     void tell()
