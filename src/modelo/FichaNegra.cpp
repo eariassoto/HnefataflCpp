@@ -5,7 +5,6 @@
 
 vector< shared_ptr<Cuadro> > FichaNegra::comer()
 {
-    cout << "este rollo" << endl;
     int i = 0;
     vector< shared_ptr<Cuadro> > v;
     while(i<4)
@@ -40,7 +39,6 @@ vector< shared_ptr<Cuadro> > FichaNegra::comer()
             i++;
         }
     }
-    cout << "sali del rollo" << endl;
     return Ficha::comer();
 };
 

@@ -6,12 +6,9 @@
 class FichaBlanca : public Ficha
 {
 public:
-    FichaBlanca(Figura* f):Ficha(f) {};
+    FichaBlanca(shared_ptr<Figura> f):Ficha(f) {};
     virtual bool esEnemigo(shared_ptr<Cuadro>);
     virtual bool esAliado(shared_ptr<Cuadro>);
-    virtual void tell()
-    {
-        cout << "soy blanca" << endl;
-    };
+
 };
 #endif // _FICHABLANCA_H_

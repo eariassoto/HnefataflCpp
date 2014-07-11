@@ -27,12 +27,12 @@ public:
         return shared_ptr<Cuadro>(new Cuadro());
     }
 
-    static shared_ptr<Cuadro> crearRey(Figura* f, shared_ptr<Cuadro> t)
+    static shared_ptr<Cuadro> crearRey(shared_ptr<Figura> f, shared_ptr<Cuadro> t)
     {
         return shared_ptr<Cuadro>(new Rey(f, t));
     }
 
-    static shared_ptr<Cuadro> crearFicha(TipoFicha tipoFicha, Figura* f)
+    static shared_ptr<Cuadro> crearFicha(TipoFicha tipoFicha, shared_ptr<Figura> f)
     {
         switch (tipoFicha)
         {

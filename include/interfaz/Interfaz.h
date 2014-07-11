@@ -13,13 +13,14 @@ class Interfaz
 public:
     Interfaz(sf::RenderWindow&);
 
-    void              dibujar();
-    void              push_figura(Figura*);
+    void dibujar();
+    void push_figura(shared_ptr<Figura>);
     int* buscarPunto(int, int);
+
     sf::RenderWindow& ventana_;
 
 private:
-    vector<Figura*> figuras;
+    vector< shared_ptr<Figura> > figuras;
 };
 
 #endif

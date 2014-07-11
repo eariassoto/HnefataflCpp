@@ -47,9 +47,13 @@ bool Tablero::mover(int* f, int* g)
             vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
             swap(vmatriz[f[0]][f[1]], vmatriz[g[0]][g[1]]);
             comer(vmatriz[g[0]][g[1]]->comer());
+
+            shared_ptr<Ficha> f = dynamic_pointer_cast<Ficha>(vmatriz[g[0]][g[1]]);
+            f->setTextoVisible(false);
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
 
@@ -81,7 +85,6 @@ void Tablero::comer(vector< shared_ptr<Cuadro> > respComer)
             cout << "tengo que comer al rey" << endl;
         else
         {
-            cout << "como " << respComer[0] << endl;
             for(vector< shared_ptr<Cuadro> >::iterator it = respComer.begin(); it != respComer.end(); it++)
             {
                 setFiguraVisible(*it, false);

@@ -30,7 +30,6 @@ shared_ptr<Cuadro> Rey::mover(shared_ptr<Cuadro> c)
         moverFigura(pos, 1);
         if(trono == reserva)
         {
-            cout << "cambiotrono" << endl;
             shared_ptr<Trono> t = dynamic_pointer_cast<Trono>(trono);
             t->setFiguraVisible(true);
 

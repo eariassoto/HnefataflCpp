@@ -45,7 +45,6 @@ void Cuadro::swap(shared_ptr<Cuadro> c)
     int j;
     for(int i = 0; i < 4; i++)
     {
-        cout << "comienza swap " << i << endl;
         aux = c->getPtr(i);
         j = ((i + 2) % 4);
         if(getPtr(i))

@@ -20,11 +20,6 @@ public:
     virtual void                            setPtr(int, shared_ptr<Cuadro>);
     virtual void                            swap(shared_ptr<Cuadro>);
 
-    virtual void tell()
-    {
-        cout << "soy cuadro" << endl;
-    };
-
     static const int ARR = 0, DER = 1, ABA = 2, IZQ = 3;
 
 //protected:

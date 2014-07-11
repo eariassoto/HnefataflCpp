@@ -41,9 +41,15 @@ public:
     {
         throw Excepcion("Soy un cuadro");
     };
+
     sf::RectangleShape& getRect()
     {
         return rectangulo;
+    };
+
+    sf::Text& getText()
+    {
+        throw Excepcion("no tengo texto");
     };
 
     int* contiene(int x, int y)

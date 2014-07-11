@@ -17,8 +17,6 @@ public:
     void seleccionar(int, int);
     int* getSeleccion();
     bool seleccion;
-
-private:
     TipoFicha tipoFicha;
     int selX, selY;
 };

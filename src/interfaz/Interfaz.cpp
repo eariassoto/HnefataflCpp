@@ -2,15 +2,15 @@
 #include "Circulo.h"
 void Interfaz::dibujar()
 {
-    vector<Figura*>::iterator it = figuras.begin();
+    vector< shared_ptr<Figura> >::iterator it = figuras.begin();
     for(it; it != figuras.end(); it++)
     {
         (*it)->dibujar();
     }
 }
-void Interfaz::push_figura(Figura* f)
+void Interfaz::push_figura(shared_ptr<Figura> f)
 {
-    Circulo * c = dynamic_cast<Circulo *> (f);
+    shared_ptr<Circulo> c = dynamic_pointer_cast<Circulo> (f);
     if(c)
         figuras.push_back(f);
     else
@@ -23,7 +23,7 @@ Interfaz::Interfaz(sf::RenderWindow& v): ventana_(v)
 
 int* Interfaz::buscarPunto(int x, int y)
 {
-    vector<Figura*>::iterator it = figuras.begin();
+    vector< shared_ptr<Figura> >::iterator it = figuras.begin();
     bool encontrado = false;
     int tamVen = ventana_.getSize().x;
     int* coord = new int[2];

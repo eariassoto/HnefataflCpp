@@ -2,8 +2,9 @@
 #include "Excepcion.h"
 #include "Esquina.h"
 #include "Trono.h"
+#include "Circulo.h"
 
-Ficha::Ficha(Figura* f):figura(f) {}
+Ficha::Ficha(shared_ptr<Figura> f):figura(f) {}
 
 shared_ptr<Cuadro> Ficha::mover(shared_ptr<Cuadro> c)
 {
@@ -38,7 +39,6 @@ shared_ptr<Cuadro> Ficha::mover(shared_ptr<Cuadro> c)
     }
     else
     {
-        cout <<"no se puede mover aqui" << endl;
         return 0;
     }
 }
@@ -79,6 +79,7 @@ void Ficha::moverFigura(int pos, int n)
         else
             mag = -2;
         figura->getCirc().move((mag*n*figura->getCirc().getRadius()),0);
+        figura->getText().move((mag*n*figura->getCirc().getRadius()),0);
     }
     else
     {
@@ -87,6 +88,7 @@ void Ficha::moverFigura(int pos, int n)
         else
             mag = -2;
         figura->getCirc().move(0,(mag*n*figura->getCirc().getRadius()));
+        figura->getText().move(0,(mag*n*figura->getCirc().getRadius()));
     }
 }
 
@@ -109,4 +111,10 @@ vector< shared_ptr<Cuadro> > Ficha::comer()
 void Ficha::setFiguraVisible(bool b)
 {
     figura->setVisible(b);
+}
+
+void Ficha::setTextoVisible(bool b)
+{
+    shared_ptr<Circulo> f = dynamic_pointer_cast<Circulo>(figura);
+    f->setTextoVisible(b);
 }

@@ -8,22 +8,14 @@ class FabricaFigura
 {
 public:
 
-    enum TipoFigura
+    static shared_ptr<Figura> crearCirculo(sf::Color c, int x, int y, int t, sf::RenderWindow& v, string s, bool b)
     {
-        CUADRADO,
-        CIRCULO,
-    };
+        return shared_ptr<Figura>(new Circulo(c, x, y, t, v, s, b));
+    }
 
-    static Figura *crearFigura(TipoFigura tipoFigura, sf::Color c, int x, int y, int t, sf::RenderWindow& v)
+    static shared_ptr<Figura> crearCuadrado(sf::Color c, int x, int y, int t, sf::RenderWindow& v)
     {
-        switch (tipoFigura)
-        {
-        case CUADRADO:
-            return new Cuadrado(c, x, y, t, v);
-        case CIRCULO:
-            return new Circulo(c, x, y, t, v);
-        }
-        throw Excepcion("tipo de figura invalida.");
+        return shared_ptr<Figura>(new Cuadrado(c, x, y, t, v));
     }
 };
 #endif // FABRICAFIGURA_H_

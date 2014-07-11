@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {
-    string pat = "map/mapa1.bin";
+    string pat = "map/mapa2.bin";
     unique_ptr<Mapa> mapa(new Mapa(pat));
     int dimension = mapa->getDimension();
     int tamVentana = (600/dimension)*dimension;
@@ -33,7 +33,7 @@ int main()
     {
         for(int j = 0; j < dimension; j++)
         {
-            Figura * figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CUADRADO, Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal);
+            shared_ptr<Figura> figura(FabricaFigura::crearCuadrado(Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal));
             interfaz->push_figura(figura);
             shared_ptr<Cuadro> cuadro;
             Mapa::TipoFicha tF = mapa->buscar(i,j);
@@ -41,7 +41,7 @@ int main()
             {
             case Mapa::TipoFicha::ESQUINA:
             {
-                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearCirculo(sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal, " E", true);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::ESQUINA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -55,7 +55,7 @@ int main()
             break;
             case Mapa::TipoFicha::BLANCA:
             {
-                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearCirculo(sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal, "J1", false);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::BLANCA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -63,7 +63,7 @@ int main()
             break;
             case Mapa::TipoFicha::NEGRA:
             {
-                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearCirculo(sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal, "J2", false);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::NEGRA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -71,14 +71,13 @@ int main()
             break;
             case Mapa::TipoFicha::REY:
             {
-
                 ///creo el trono
-                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearCirculo(sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal, " T", false);
                 interfaz->push_figura(figura);
                 shared_ptr<Cuadro> trono = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::TRONO, figura);
 
                 ///creo el rey
-                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearCirculo(sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal, " R", false);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearRey(figura, trono);
                 tablero->agregarFicha(i,j, cuadro);
@@ -107,23 +106,23 @@ int main()
                     {
                         int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
 
-                        tablero->getFicha(coord[0], coord[1])->tell();
                         if(jugador->esFichaMia(tablero->getFicha(coord[0], coord[1])))
                         {
-                            cout << "seleccione " << coord[0] << ", " << coord[1] << endl;
                             jugador->seleccionar(coord[0], coord[1]);
+                            shared_ptr<Ficha> cu = dynamic_pointer_cast<Ficha>(tablero->getFicha(coord[0], coord[1]));
+                            cu->setTextoVisible(true);
                         }
                         else
                         {
-                            cout << "mande a mover a la seleccion en " << coord[0] << ", " << coord[1] << endl;
                             bool movimiento = false;
                             if(jugador->seleccion)
-                                movimiento = tablero->mover(jugador->getSeleccion(), coord);
+                            movimiento = tablero->mover(jugador->getSeleccion(), coord);
                             if(movimiento)
-                            {if(jugador == jugador1)
-                                jugador = jugador2;
-                            else
-                                jugador = jugador1;
+                            {
+                                if(jugador == jugador1)
+                                    jugador = jugador2;
+                                else
+                                    jugador = jugador1;
                             }
                         }
                         delete coord;

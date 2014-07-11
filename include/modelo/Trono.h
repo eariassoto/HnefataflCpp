@@ -7,13 +7,9 @@
 class Trono: public Cuadro
 {
 public:
-    Trono(Figura* f): figura(f), Cuadro()
+    Trono(shared_ptr<Figura> f): figura(f), Cuadro()
     {
         figura->setVisible(false);
-    };
-    virtual void tell()
-    {
-        cout << "soy trono" << endl;
     };
 
     void setFiguraVisible(bool b)
@@ -22,7 +18,7 @@ public:
     };
 
 protected:
-    Figura* figura;
+    shared_ptr<Figura> figura;
 };
 #endif // _TRONO_H_
 
