@@ -1,7 +1,7 @@
 #ifndef FICHA_H_
 #define FICHA_H_
 #include <vector>
-
+#include <memory>
 #include "Cuadro.h"
 #include "Figura.h"
 
@@ -13,13 +13,13 @@ class Ficha: public Cuadro
 public:
     Ficha(Figura*);
 
-    virtual Cuadro*         mover(Cuadro*);
-    virtual vector<Cuadro*> comer();
-    virtual bool            esCuadro(Cuadro*);
-    virtual void            moverFigura(int, int);
-    virtual void            setFiguraVisible(bool);
-    virtual bool            esEnemigo(Cuadro*)=0;
-    virtual bool            esAliado(Cuadro*)=0;
+    virtual shared_ptr<Cuadro>           mover(shared_ptr<Cuadro>);
+    virtual vector< shared_ptr<Cuadro> > comer();
+    virtual bool                         esCuadro(shared_ptr<Cuadro>);
+    virtual void                         moverFigura(int, int);
+    virtual void                         setFiguraVisible(bool);
+    virtual bool                         esEnemigo(shared_ptr<Cuadro>)=0;
+    virtual bool                         esAliado(shared_ptr<Cuadro>)=0;
 
 protected:
     Figura *figura;

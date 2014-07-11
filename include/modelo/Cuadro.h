@@ -2,22 +2,24 @@
 #define _CUADRO_H_
 #include <vector>
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
-class Cuadro
+class Cuadro: public enable_shared_from_this<Cuadro>
 {
 public:
 
     Cuadro();
 
     //cosas que tiran excepciones, mera prevencion
-    virtual Cuadro*         mover(Cuadro*);
-    virtual vector<Cuadro*> comer();
+    virtual shared_ptr<Cuadro>              mover(shared_ptr<Cuadro>);
+    virtual vector< shared_ptr<Cuadro> >    comer();
 
-    virtual Cuadro*         getPtr(int);
-    virtual void            setPtr(int, Cuadro*);
-    virtual void            swap(Cuadro*);
+    virtual shared_ptr<Cuadro>              getPtr(int);
+    virtual void                            setPtr(int, shared_ptr<Cuadro>);
+    virtual void                            swap(shared_ptr<Cuadro>);
+
     virtual void tell()
     {
         cout << "soy cuadro" << endl;
@@ -26,6 +28,6 @@ public:
     static const int ARR = 0, DER = 1, ABA = 2, IZQ = 3;
 
 //protected:
-    Cuadro *cuadroArr, *cuadroDer, *cuadroAba, *cuadroIzq;
+    shared_ptr<Cuadro> cuadroArr, cuadroDer, cuadroAba, cuadroIzq;
 };
 #endif // _CUADRO_H_

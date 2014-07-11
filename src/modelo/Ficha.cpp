@@ -5,7 +5,7 @@
 
 Ficha::Ficha(Figura* f):figura(f) {}
 
-Cuadro* Ficha::mover(Cuadro* c)
+shared_ptr<Cuadro> Ficha::mover(shared_ptr<Cuadro> c)
 {
     int i = 0;
     bool encontrado = false;
@@ -14,7 +14,7 @@ Cuadro* Ficha::mover(Cuadro* c)
 
     while(i < 4 && !encontrado)
     {
-        Cuadro * vecino = getPtr(i);
+        shared_ptr<Cuadro> vecino = getPtr(i);
         pasos = 1;
         while(!encontrado && vecino && esCuadro(vecino))
         {
@@ -43,7 +43,7 @@ Cuadro* Ficha::mover(Cuadro* c)
     }
 }
 
-bool Ficha::esCuadro(Cuadro* c)
+bool Ficha::esCuadro(shared_ptr<Cuadro> c)
 {
     try
     {
@@ -89,10 +89,10 @@ void Ficha::moverFigura(int pos, int n)
     }
 }
 
-vector<Cuadro*> Ficha::comer()
+vector< shared_ptr<Cuadro> > Ficha::comer()
 {
     int i = 0;
-    vector<Cuadro*> v;
+    vector< shared_ptr<Cuadro> > v;
     while(i<4)
     {
         if(esEnemigo(getPtr(i)))

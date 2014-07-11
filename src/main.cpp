@@ -35,7 +35,7 @@ int main()
         {
             Figura * figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CUADRADO, Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal);
             interfaz->push_figura(figura);
-            Cuadro* cuadro;
+            shared_ptr<Cuadro> cuadro;
             Mapa::TipoFicha tF = mapa->buscar(i,j);
             switch(tF)
             {
@@ -75,7 +75,8 @@ int main()
                 ///creo el trono
                 figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
-                Cuadro* trono = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::TRONO, figura);
+                shared_ptr<Cuadro> trono = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::TRONO, figura);
+
                 ///creo el rey
                 figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);

@@ -3,7 +3,7 @@
 
 Cuadro::Cuadro():cuadroArr(0), cuadroDer(0), cuadroAba(0), cuadroIzq(0) {};
 
-Cuadro* Cuadro::getPtr(int i)
+shared_ptr<Cuadro> Cuadro::getPtr(int i)
 {
     switch(i)
     {
@@ -18,7 +18,7 @@ Cuadro* Cuadro::getPtr(int i)
     }
 }
 
-void Cuadro::setPtr(int pos, Cuadro* ptr)
+void Cuadro::setPtr(int pos, shared_ptr<Cuadro> ptr)
 {
     switch(pos)
     {
@@ -39,9 +39,9 @@ void Cuadro::setPtr(int pos, Cuadro* ptr)
     }
 }
 
-void Cuadro::swap(Cuadro* c)
+void Cuadro::swap(shared_ptr<Cuadro> c)
 {
-    Cuadro* aux;
+    shared_ptr<Cuadro> aux;
     int j;
     for(int i = 0; i < 4; i++)
     {
@@ -56,29 +56,29 @@ void Cuadro::swap(Cuadro* c)
             {
                 c->setPtr(i, getPtr(i)); //el otroapunte al mio
                 if(c->getPtr(i) == c)
-                    c->setPtr(i, this);
+                    c->setPtr(i, shared_from_this());
             }
         }
         if (aux)
         {
-            if(aux != this)
-                aux->setPtr(j, this);
+            if(aux != shared_from_this())
+                aux->setPtr(j, shared_from_this());
             if(getPtr(i))
             {
                 setPtr(i, aux); //apunte al del otro
-                if(getPtr(i) == this)
+                if(getPtr(i) == shared_from_this())
                     setPtr(i, c);
             }
         }
     }
 }
 
-Cuadro* Cuadro::mover(Cuadro*)
+shared_ptr<Cuadro> Cuadro::mover(shared_ptr<Cuadro>)
 {
     throw Excepcion("Esta ficha es un cuadro, no puede moverse");
 };
 
-vector<Cuadro*> Cuadro::comer()
+vector< shared_ptr<Cuadro> > Cuadro::comer()
 {
     throw Excepcion("Esta ficha es un cuadro, no puede comer");
 };

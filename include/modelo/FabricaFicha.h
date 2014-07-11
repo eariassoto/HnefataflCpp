@@ -22,28 +22,28 @@ public:
         ESQUINA
     };
 
-    static Cuadro* crearCuadro()
+    static shared_ptr<Cuadro> crearCuadro()
     {
-        return new Cuadro();
+        return shared_ptr<Cuadro>(new Cuadro());
     }
 
-    static Cuadro* crearRey(Figura* f, Cuadro* t)
+    static shared_ptr<Cuadro> crearRey(Figura* f, shared_ptr<Cuadro> t)
     {
-        return new Rey(f, t);
+        return shared_ptr<Cuadro>(new Rey(f, t));
     }
 
-    static Cuadro* crearFicha(TipoFicha tipoFicha, Figura* f)
+    static shared_ptr<Cuadro> crearFicha(TipoFicha tipoFicha, Figura* f)
     {
         switch (tipoFicha)
         {
         case BLANCA:
-            return new FichaBlanca(f);
+            return shared_ptr<Cuadro>(new FichaBlanca(f));
         case NEGRA:
-            return new FichaNegra(f);
+            return shared_ptr<Cuadro>(new FichaNegra(f));
         case TRONO:
-            return new Trono(f);
+            return shared_ptr<Cuadro>(new Trono(f));
         case ESQUINA:
-            return new Esquina(f);
+            return shared_ptr<Cuadro>(new Esquina(f));
         }
         throw Excepcion("tipo de ficha invalida.");
     }

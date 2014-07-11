@@ -3,7 +3,7 @@
 #include "Esquina.h"
 #include "Excepcion.h"
 
-Cuadro* Rey::mover(Cuadro* c)
+Cuadro* Rey::mover(shared_ptr<Cuadro> c)
 {
     int i = 0;
     bool encontrado = false;
@@ -31,7 +31,7 @@ Cuadro* Rey::mover(Cuadro* c)
         if(trono == reserva)
         {
             cout << "cambiotrono" << endl;
-            Trono* t = dynamic_cast<Trono*>(trono);
+            shared_ptr<Trono> t = dynamic_pointer_cast<Trono>(trono);//dynamic_cast<shared_ptr<Trono> >(trono);
             t->setFiguraVisible(true);
 
             reserva = c;

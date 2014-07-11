@@ -1,13 +1,14 @@
 #ifndef REY_H_
 #define REY_H_
+#include <memory>
 #include "FichaBlanca.h"
 #include "Cuadro.h"
 
 class Rey : public FichaBlanca
 {
 public:
-    Rey(Figura* f, Cuadro * t):FichaBlanca(f), trono(t), reserva(t) {};
-    Cuadro* mover(Cuadro*);
+    Rey(Figura* f, shared_ptr<Cuadro> t):FichaBlanca(f), trono(t), reserva(t) {};
+    shared_ptr<Cuadro> mover(shared_ptr<Cuadro>);
     bool esCuadro(Cuadro* c);
 
     //TODO define scope
@@ -19,7 +20,7 @@ public:
         getPtr(2)->tell();
         getPtr(3)->tell();
     };
-    Cuadro *trono, *reserva;
+    shared_ptr<Cuadro> trono, reserva;
 
 };
 #endif // REY_H_
