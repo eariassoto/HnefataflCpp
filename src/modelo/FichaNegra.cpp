@@ -5,33 +5,42 @@
 
 vector<Cuadro*> FichaNegra::comer()
 {
+    cout << "este rollo" << endl;
     int i = 0;
     vector<Cuadro*> v;
     while(i<4)
     {
-        Cuadro * r = esRey(getPtr(i), i);
-        if(r)
+        if(getPtr(i))
         {
-            int j = 0;
-            for(int i = 0; i < 4; i++)
+            Cuadro * r = esRey(getPtr(i), i);
+            if(r)
             {
-                if(esAliadoContraRey(r->getPtr(i),i))
-                    j++;
-            }
-            if(j==4)
-            {
-                v.push_back(r);
-                return v;
-                i = 4; ///STAHP
+                int j = 0;
+                for(int i = 0; i < 4; i++)
+                {
+                    if(esAliadoContraRey(r->getPtr(i),i))
+                        j++;
+                }
+                if(j==4)
+                {
+                    v.push_back(r);
+                    return v;
+                    i = 4; ///STAHP
+                }
+                else
+                    i++;
             }
             else
+            {
                 i++;
+            }
         }
         else
         {
             i++;
         }
     }
+    cout << "sali del rollo" << endl;
     return Ficha::comer();
 };
 

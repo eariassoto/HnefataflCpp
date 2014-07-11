@@ -7,8 +7,11 @@
 class Esquina: public Cuadro
 {
 public:
-    Esquina(Figura* f): figura(f), Cuadro(){};
-    virtual void tell(){cout << "soy esquina" << endl;};
+    Esquina(Figura* f): figura(f), Cuadro() {};
+    virtual void tell()
+    {
+        cout << "soy esquina" << endl;
+    };
 
 protected:
     Figura* figura;

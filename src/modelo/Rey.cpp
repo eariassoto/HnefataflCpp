@@ -43,6 +43,9 @@ Cuadro* Rey::mover(Cuadro* c)
         }
         else if(trono == c)
         {
+            cout << "he aqui el puto!" << endl;
+            Trono* t = dynamic_cast<Trono*>(trono);
+            t->setFiguraVisible(false);
             Cuadro * ret = reserva;
             for(int i = 0; i < 4; i++)
             {
@@ -68,19 +71,7 @@ bool Rey::esCuadro(Cuadro* c)
     try
     {
         Cuadro* r = dynamic_cast<Ficha*>(c);
-        if(r)
-            return !r;
-        else
-        {
-            r = dynamic_cast<Esquina*>(c);
-            if(r)
-                return !r;
-            else
-            {
-                r = dynamic_cast<Trono*>(c);
-                return !r;
-            }
-        }
+        return !r;
     }
     catch(exception& e)
     {

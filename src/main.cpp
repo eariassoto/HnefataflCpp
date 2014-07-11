@@ -102,28 +102,31 @@ int main()
             case sf::Event::MouseButtonPressed:
                 if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                    int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
-                    if(!jugador->seleccion)
+                    try
                     {
+                        int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
+
                         tablero->getFicha(coord[0], coord[1])->tell();
                         if(jugador->esFichaMia(tablero->getFicha(coord[0], coord[1])))
                         {
                             cout << "seleccione " << coord[0] << ", " << coord[1] << endl;
                             jugador->seleccionar(coord[0], coord[1]);
                         }
-                    }
-                    else
-                    {
-                        cout << "mande a mover a la seleccion en " << coord[0] << ", " << coord[1] << endl;
-                        tablero->mover(jugador->getSeleccion(), coord);
-
-                        jugador->seleccion = false; //linea fea TODO
-                        if(jugador == jugador1)
-                            jugador = jugador2;
                         else
-                            jugador = jugador1;
+                        {
+                            cout << "mande a mover a la seleccion en " << coord[0] << ", " << coord[1] << endl;
+                            bool movimiento = tablero->mover(jugador->getSeleccion(), coord);
+                            if(movimiento)
+                            {if(jugador == jugador1)
+                                jugador = jugador2;
+                            else
+                                jugador = jugador1;
+                            }
+                        }
+                        delete coord;
+
                     }
-                    delete coord;
+                    catch(Excepcion e) {}
                 }
             }
         }

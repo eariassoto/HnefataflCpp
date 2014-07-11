@@ -41,20 +41,23 @@ bool Tablero::mover(int* f, int* g)
     try
     {
         Cuadro* cambio = vmatriz[f[0]][f[1]]->mover(vmatriz[g[0]][g[1]]);
-        cout << vmatriz[g[0]][g[1]] << " " << cambio << endl;
         if(cambio)
         {
             vmatriz[g[0]][g[1]] = cambio;
             vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
             swap(vmatriz[f[0]][f[1]], vmatriz[g[0]][g[1]]);
             comer(vmatriz[g[0]][g[1]]->comer());
+            return true;
         }
-        return true;
+        else{
+            return false;
+        }
 
     }
     catch(Excepcion e)
     {
         cout << e.what() << endl;
+        return false;
     }
 }
 
@@ -71,6 +74,7 @@ void Tablero::setFiguraVisible(Cuadro * c, bool b)
 
 void Tablero::comer(vector<Cuadro*> respComer)
 {
+    cout << "enre a comer" << endl;
     if(!respComer.empty())
     {
         Cuadro * r = dynamic_cast<Rey*> (respComer[0]);

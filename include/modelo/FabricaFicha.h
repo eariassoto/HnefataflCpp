@@ -27,7 +27,8 @@ public:
         return new Cuadro();
     }
 
-    static Cuadro* crearRey(Figura* f, Cuadro* t){
+    static Cuadro* crearRey(Figura* f, Cuadro* t)
+    {
         return new Rey(f, t);
     }
 

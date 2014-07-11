@@ -38,37 +38,38 @@ void Cuadro::setPtr(int pos, Cuadro* ptr)
         throw Excepcion("rango fuera filas");
     }
 }
-/*
+
 void Cuadro::swap(Cuadro* c)
 {
     Cuadro* aux;
     int j;
     for(int i = 0; i < 4; i++)
     {
+        cout << "comienza swap " << i << endl;
+        aux = c->getPtr(i);
         j = ((i + 2) % 4);
-        aux = this->getPtr(i); //guarde mi puntero temporal
-        if(aux)
-            aux->setPtr(j, c);
-        if (c->getPtr(i))
-            c->getPtr(i)->setPtr(j, this);
-        this->setPtr(i, c->getPtr(i)); //apunte al del otro
-        c->setPtr(i, aux); //el otroapunte al mio
-    }
-}*/
-void Cuadro::swap(Cuadro* c)
-{
-    Cuadro* aux;
-    int j;
-    for(int i = 0; i < 4; i++)
-    {
-        j = ((i + 2) % 4);
-        aux = this->getPtr(i); //guarde mi puntero temporal
-        if(aux)
-            aux->setPtr(j, c);
-        if (c->getPtr(i))
-            c->getPtr(i)->setPtr(j, this);
-        this->setPtr(i, c->getPtr(i)); //apunte al del otro
-        c->setPtr(i, aux); //el otroapunte al mio
+        if(getPtr(i))
+        {
+            if(getPtr(i) != c)
+                getPtr(i)->setPtr(j, c);
+            if(aux)
+            {
+                c->setPtr(i, getPtr(i)); //el otroapunte al mio
+                if(c->getPtr(i) == c)
+                    c->setPtr(i, this);
+            }
+        }
+        if (aux)
+        {
+            if(aux != this)
+                aux->setPtr(j, this);
+            if(getPtr(i))
+            {
+                setPtr(i, aux); //apunte al del otro
+                if(getPtr(i) == this)
+                    setPtr(i, c);
+            }
+        }
     }
 }
 

@@ -1,11 +1,10 @@
 #ifndef INTERFAZ_H_
 #define INTERFAZ_H_
 #include <iostream>
-#include <memory>
 #include <SFML/Graphics.hpp>
+#include <vector>
 #include "Figura.h"
-#include "Cuadrado.h"
-#include "Circulo.h"
+#include <memory>
 
 using namespace std;
 

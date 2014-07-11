@@ -1,4 +1,5 @@
 #include "Interfaz.h"
+#include "Circulo.h"
 void Interfaz::dibujar()
 {
     vector<Figura*>::iterator it = figuras.begin();
