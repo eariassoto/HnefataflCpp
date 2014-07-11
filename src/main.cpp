@@ -115,7 +115,9 @@ int main()
                         else
                         {
                             cout << "mande a mover a la seleccion en " << coord[0] << ", " << coord[1] << endl;
-                            bool movimiento = tablero->mover(jugador->getSeleccion(), coord);
+                            bool movimiento = false;
+                            if(jugador->seleccion)
+                                movimiento = tablero->mover(jugador->getSeleccion(), coord);
                             if(movimiento)
                             {if(jugador == jugador1)
                                 jugador = jugador2;

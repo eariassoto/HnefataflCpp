@@ -25,8 +25,6 @@ public:
         }
     }
 
-    Cuadrado(sf::RectangleShape& r, sf::RenderWindow& v):rectangulo(r), Figura(v) {};
-
     Cuadrado(sf::Color c, int x, int y, int t, sf::RenderWindow& v):rectangulo(sf::Vector2f(t, t)), Figura(v)
     {
         rectangulo.setFillColor(c);

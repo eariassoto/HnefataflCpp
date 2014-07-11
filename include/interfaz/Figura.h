@@ -10,6 +10,7 @@ public:
     Figura(sf::RenderWindow& v):ventana(v)
     {
         visible = true;
+
     };
 
     virtual void                dibujar() = 0;

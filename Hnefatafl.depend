@@ -776,15 +776,15 @@
 	"Figura.h"
 	<memory>
 
-1405038656 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
+1405046952 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
 	<SFML/Graphics.hpp>
 	"Excepcion.h"
 
-1405038657 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
+1405046952 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
 	<string>
 	"Figura.h"
 
-1405042356 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
+1405046624 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
 	<iostream>
 	<map>
 	<utility>
@@ -839,7 +839,7 @@
 	"Excepcion.h"
 	"Figura.h"
 
-1405038656 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
+1405046952 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
 	<string>
 	"Figura.h"
 	"Excepcion.h"
