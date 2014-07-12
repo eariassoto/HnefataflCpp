@@ -12,10 +12,6 @@ public:
     {
         circulo.setFillColor(c);
         circulo.setPosition(y*t, x*t);
-        if (!font.loadFromFile("arial.ttf"))
-        {
-            cout << "dayum" << endl;
-        }
     }
 
     void dibujar()
@@ -35,8 +31,6 @@ public:
     };
 
 private:
-
     sf::CircleShape circulo;
-    sf::Font font;
 };
 #endif // CIRCULO_H_

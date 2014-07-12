@@ -20,6 +20,11 @@ public:
     vector<int> leerArchivoEntero();
     int         getLargo();
     int         getLargoEntero();
+
+    void escribirEntero(ofstream&, int);
+    static bool archivoExiste(const char*);
+    void borrarArchivo(const char*);
+
 protected:
     const string path;
 };

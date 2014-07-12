@@ -45,30 +45,14 @@ void Cuadro::swap(shared_ptr<Cuadro> c)
     int j;
     for(int i = 0; i < 4; i++)
     {
-        aux = c->getPtr(i);
         j = ((i + 2) % 4);
-        if(getPtr(i))
-        {
-            if(getPtr(i) != c)
-                getPtr(i)->setPtr(j, c);
-            if(aux)
-            {
-                c->setPtr(i, getPtr(i)); //el otroapunte al mio
-                if(c->getPtr(i) == c)
-                    c->setPtr(i, shared_from_this());
-            }
-        }
-        if (aux)
-        {
-            if(aux != shared_from_this())
-                aux->setPtr(j, shared_from_this());
-            if(getPtr(i))
-            {
-                setPtr(i, aux); //apunte al del otro
-                if(getPtr(i) == shared_from_this())
-                    setPtr(i, c);
-            }
-        }
+        aux = this->getPtr(i); //guarde mi puntero temporal
+        if(aux)
+            aux->setPtr(j, c);
+        if (c->getPtr(i))
+            c->getPtr(i)->setPtr(j, shared_from_this());
+        this->setPtr(i, c->getPtr(i)); //apunte al del otro
+        c->setPtr(i, aux); //el otroapunte al mio
     }
 }
 

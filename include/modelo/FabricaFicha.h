@@ -8,7 +8,6 @@
 #include "FichaNegra.h"
 #include "Esquina.h"
 #include "Rey.h"
-#include "Trono.h"
 
 class FabricaFicha
 {
@@ -18,18 +17,13 @@ public:
     {
         BLANCA,
         NEGRA,
-        TRONO,
-        ESQUINA
+        ESQUINA,
+        REY
     };
 
     static shared_ptr<Cuadro> crearCuadro()
     {
         return shared_ptr<Cuadro>(new Cuadro());
-    }
-
-    static shared_ptr<Cuadro> crearRey(shared_ptr<Figura> f, shared_ptr<Cuadro> t)
-    {
-        return shared_ptr<Cuadro>(new Rey(f, t));
     }
 
     static shared_ptr<Cuadro> crearFicha(TipoFicha tipoFicha, shared_ptr<Figura> f)
@@ -40,10 +34,10 @@ public:
             return shared_ptr<Cuadro>(new FichaBlanca(f));
         case NEGRA:
             return shared_ptr<Cuadro>(new FichaNegra(f));
-        case TRONO:
-            return shared_ptr<Cuadro>(new Trono(f));
         case ESQUINA:
             return shared_ptr<Cuadro>(new Esquina(f));
+        case REY:
+            return shared_ptr<Cuadro>(new Rey(f));
         }
         throw Excepcion("tipo de ficha invalida.");
     }

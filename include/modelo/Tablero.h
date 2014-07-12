@@ -16,9 +16,12 @@ public:
     shared_ptr<Cuadro> getFicha(int, int);
     void               setFiguraVisible(shared_ptr<Cuadro>, bool);
     void               comer(vector<shared_ptr<Cuadro> >);
+    int                getDimension();
+    int                finJuego;
 
 private:
     vector< vector<shared_ptr<Cuadro> > > vmatriz;
     int                                   dimension;
+
 };
 #endif // _TABLERO_H_

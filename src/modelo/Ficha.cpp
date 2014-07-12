@@ -1,7 +1,6 @@
 #include "Ficha.h"
 #include "Excepcion.h"
 #include "Esquina.h"
-#include "Trono.h"
 #include "Circulo.h"
 
 Ficha::Ficha(shared_ptr<Figura> f):figura(f) {}
@@ -47,20 +46,16 @@ bool Ficha::esCuadro(shared_ptr<Cuadro> c)
 {
     try
     {
-        shared_ptr<Cuadro> r = dynamic_pointer_cast<Ficha>(c);
-        //Cuadro* r = dynamic_cast<Ficha*>(c);
-        if(r)
-            return !r;
+        shared_ptr<Ficha> f = dynamic_pointer_cast<Ficha>(c);
+        if(f)
+            return false;
         else
         {
-            r = dynamic_pointer_cast<Esquina>(c);
-            if(r)
-                return !r;
+            shared_ptr<Esquina> e = dynamic_pointer_cast<Esquina>(c);
+            if(e)
+                return false;
             else
-            {
-                r = dynamic_pointer_cast<Trono>(c);
-                return !r;
-            }
+                return true;
         }
     }
     catch(exception& e)
