@@ -9,11 +9,13 @@
 #include "Esquina.h"
 #include "Rey.h"
 
+/** \brief Clase util para crear instancias de distintas clases de una manera mas limpia.
+ */
 class FabricaFicha
 {
 public:
 
-    enum TipoFicha
+    enum TipoFicha ///Para identificar la figura que me piden
     {
         BLANCA,
         NEGRA,
@@ -21,11 +23,23 @@ public:
         REY
     };
 
+    /** \brief Crea instancias de Cuadro
+     *
+     * \return shared_ptr<Cuadro>
+     *
+     */
     static shared_ptr<Cuadro> crearCuadro()
     {
         return shared_ptr<Cuadro>(new Cuadro());
     }
 
+    /** \brief Crea nuevas instancias de las clases derivadas de Cuadro.
+     *
+     * \param tipoFicha TipoFicha
+     * \param f shared_ptr<Figura>
+     * \return shared_ptr<Cuadro>
+     *
+     */
     static shared_ptr<Cuadro> crearFicha(TipoFicha tipoFicha, shared_ptr<Figura> f)
     {
         switch (tipoFicha)

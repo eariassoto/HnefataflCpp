@@ -15,9 +15,22 @@
 using namespace std;
 
 ///Prototipos
+
+/** \brief Guarda la partido
+ *
+ */
 void guardarJuego(shared_ptr<Mapa>, shared_ptr<Tablero>);
+
+/** \brief Busca cuantos mapas hay disponibles.
+ */
 vector<string> buscarMapas();
+
+/** \brief Pide al usuario que escoga un tipo de mapa o bien una partida anterior
+ */
 string escogerMapa(string);
+
+/** \brief Carga el tablero desde el mapa.
+ */
 void iniciarTablero(shared_ptr<Mapa>, shared_ptr<Tablero>, shared_ptr<Interfaz>, sf::RenderWindow&, int, int);
 
 int main()
@@ -28,6 +41,7 @@ int main()
     int tamVentana = (600/dimension)*dimension;
     int tamCuadro = (int)(tamVentana / dimension);
 
+    ///Inicializacion de instancias
     sf::RenderWindow ventanaPrincipal(sf::VideoMode(tamVentana,tamVentana), "Hnefatafl");
     shared_ptr<Interfaz> interfaz(new Interfaz(ventanaPrincipal));
     shared_ptr<Tablero> tablero(new Tablero(dimension));
@@ -40,18 +54,25 @@ int main()
 
     bool fin = false, clic = false, cambioTurno = true;
     int mousex = -1, mousey = -1;
-    while (!fin && ventanaPrincipal.isOpen())
+
+    ///pequeño encabezado
+    cout << "Bienvenido. Las fichas blancas y el rey son del jugador 1, las negras del jugador 2." << endl << "El objetivo del juego es que el Rey llega a una esquina (en verde) o que los negros capturen al rey." << endl << "Gana quien logre el objetivo primero." << endl << "Las otras reglas ya las sabe profe. gl hf" << endl;
+
+    while (!fin && ventanaPrincipal.isOpen()) ///loop principal del juego
     {
         sf::Event event;
         while (ventanaPrincipal.pollEvent(event))
         {
+            ///poll de eventos
             switch(event.type)
             {
             case sf::Event::Closed:
+                ///usuario cerro el juego
                 guardarJuego(mapa, tablero);
                 ventanaPrincipal.close();
                 break;
             case sf::Event::MouseButtonPressed:
+                ///usuario hizo clic
                 if (event.mouseButton.button == sf::Mouse::Left)
                 {
                     int* coord = interfaz->buscarPunto(event.mouseButton.x, event.mouseButton.y);
@@ -61,6 +82,7 @@ int main()
                     clic = true;
                 }
             }
+            ///verificaciones del juego
             try
             {
                 if(cambioTurno)
@@ -111,6 +133,7 @@ int main()
             }
             catch(Excepcion e) {}
 
+            /// verificaciones de fin de juego
             if(tablero->finJuego == 1)
             {
                 cout << "Los negros han ganado. El rey ha sido capturado" << endl;
@@ -203,7 +226,7 @@ void iniciarTablero(shared_ptr<Mapa> mapa, shared_ptr<Tablero> tablero, shared_p
     {
         for(int j = 0; j < dimension; j++)
         {
-            shared_ptr<Figura> figura(FabricaFigura::crearCuadrado(Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal));
+            shared_ptr<Figura> figura(FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CUADRADO, Cuadrado::getColorCuadro(i,j), i, j, tamCuadro, ventanaPrincipal));
             interfaz->push_figura(figura);
             shared_ptr<Cuadro> cuadro;
             Mapa::TipoFicha tF = mapa->buscar(i,j);
@@ -211,7 +234,7 @@ void iniciarTablero(shared_ptr<Mapa> mapa, shared_ptr<Tablero> tablero, shared_p
             {
             case Mapa::TipoFicha::ESQUINA:
             {
-                figura = FabricaFigura::crearCirculo(sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::ESQUINA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -225,7 +248,7 @@ void iniciarTablero(shared_ptr<Mapa> mapa, shared_ptr<Tablero> tablero, shared_p
             break;
             case Mapa::TipoFicha::BLANCA:
             {
-                figura = FabricaFigura::crearCirculo(sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::BLANCA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -233,7 +256,7 @@ void iniciarTablero(shared_ptr<Mapa> mapa, shared_ptr<Tablero> tablero, shared_p
             break;
             case Mapa::TipoFicha::NEGRA:
             {
-                figura = FabricaFigura::crearCirculo(sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::NEGRA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -242,7 +265,7 @@ void iniciarTablero(shared_ptr<Mapa> mapa, shared_ptr<Tablero> tablero, shared_p
             case Mapa::TipoFicha::REY:
             {
                 ///creo el rey
-                figura = FabricaFigura::crearCirculo(sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
+                figura = FabricaFigura::crearFigura(FabricaFigura::TipoFigura::CIRCULO, sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::REY, figura);
                 tablero->agregarFicha(i,j, cuadro);

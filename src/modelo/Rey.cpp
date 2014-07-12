@@ -24,7 +24,7 @@ shared_ptr<Cuadro> Rey::mover(shared_ptr<Cuadro> c)
         }
         i++;
     }
-   if(encontrado)
+    if(encontrado)
     {
         moverFigura(pos, 1);
         return c;

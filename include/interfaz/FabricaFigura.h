@@ -1,22 +1,42 @@
 #ifndef FABRICAFIGURA_H_
 #define FABRICAFIGURA_H_
-#include "Excepcion.h"
 #include "Figura.h"
 #include "Cuadrado.h"
 #include "Circulo.h"
+
+/** \brief Clase util para crear instancias de distintas clases de una manera mas limpia.
+ */
 class FabricaFigura
 {
+
 public:
 
-    static shared_ptr<Figura> crearCirculo(sf::Color c, int x, int y, int t, sf::RenderWindow& v)
+    enum TipoFigura ///Para identificar la figura que me piden
     {
-        return shared_ptr<Figura>(new Circulo(c, x, y, t, v));
-    }
+        CUADRADO,
+        CIRCULO,
+    };
 
-    static shared_ptr<Figura> crearCuadrado(sf::Color c, int x, int y, int t, sf::RenderWindow& v)
+    /** \brief Crea nuevas instancias de las clases derivadas de figura.
+     *
+     * \param tipoFigura TipoFigura
+     * \param c sf::Color
+     * \param x int
+     * \param y int
+     * \param t int
+     * \param v sf::RenderWindow&
+     * \return shared_ptr<Figura>
+     *
+     */
+    static shared_ptr<Figura> crearFigura(TipoFigura tipoFigura, sf::Color c, int x, int y, int t, sf::RenderWindow& v)
     {
-        return shared_ptr<Figura>(new Cuadrado(c, x, y, t, v));
+        switch (tipoFigura)
+        {
+        case CUADRADO:
+            return shared_ptr<Figura>(new Cuadrado(c, x, y, t, v));
+        case CIRCULO:
+            return shared_ptr<Figura>(new Circulo(c, x, y, t, v));
+        }
     }
 };
 #endif // FABRICAFIGURA_H_
-

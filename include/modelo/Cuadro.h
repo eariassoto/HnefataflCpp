@@ -6,23 +6,34 @@
 
 using namespace std;
 
+/** \brief Clase base de las fichas del tablero, tiene las operaciones basicas de intercambios de punteros y declaraciones virtuales vacias.
+ */
 class Cuadro: public enable_shared_from_this<Cuadro>
 {
 public:
 
     Cuadro();
 
-    //cosas que tiran excepciones, mera prevencion
+    ///Implementaciones vacias.
     virtual shared_ptr<Cuadro>              mover(shared_ptr<Cuadro>);
     virtual vector< shared_ptr<Cuadro> >    comer();
 
-    virtual shared_ptr<Cuadro>              getPtr(int);
-    virtual void                            setPtr(int, shared_ptr<Cuadro>);
-    virtual void                            swap(shared_ptr<Cuadro>);
+    shared_ptr<Cuadro>                      getPtr(int);
+    void                                    setPtr(int, shared_ptr<Cuadro>);
 
+    /** \brief Inteercambia debidamente los punteros entre dos objetos.
+     *
+     * \param shared_ptr<Cuadro>
+     * \return virtual void
+     *
+     */
+    void                                    swap(shared_ptr<Cuadro>);
+
+    /// Constantes
     static const int ARR = 0, DER = 1, ABA = 2, IZQ = 3;
 
-//protected:
-    shared_ptr<Cuadro> cuadroArr, cuadroDer, cuadroAba, cuadroIzq;
+protected:
+
+    shared_ptr<Cuadro> cuadroArr, cuadroDer, cuadroAba, cuadroIzq; ///Punteros hacia los vecinos en el tablero.
 };
 #endif // _CUADRO_H_

@@ -5,7 +5,7 @@
 
 Tablero::Tablero(int t):dimension(t), vmatriz(t, vector< shared_ptr<Cuadro> >(t))
 {
-     finJuego = 0;
+    finJuego = 0;
 }
 
 
@@ -58,7 +58,7 @@ bool Tablero::mover(int* f, int* g)
         {
             return false;
         }
-    delete g;
+        delete g;
     }
     catch(Excepcion e)
     {
@@ -83,10 +83,11 @@ void Tablero::comer(vector< shared_ptr<Cuadro> > respComer)
     if(!respComer.empty())
     {
         shared_ptr<Cuadro> r = dynamic_pointer_cast<Rey> (respComer[0]);
-        if(r){
+        if(r)
+        {
             cout << "reycomido" << endl;
             finJuego = 1;
-            }
+        }
         else
         {
             for(vector< shared_ptr<Cuadro> >::iterator it = respComer.begin(); it != respComer.end(); it++)
@@ -107,6 +108,7 @@ void Tablero::comer(vector< shared_ptr<Cuadro> > respComer)
     }
 }
 
-int Tablero::getDimension(){
-        return dimension;
+int Tablero::getDimension()
+{
+    return dimension;
 }

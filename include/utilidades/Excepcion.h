@@ -5,6 +5,8 @@
 
 using namespace std;
 
+/** \brief Util para manejo de excepciones
+ */
 class Excepcion: public exception
 {
 public:

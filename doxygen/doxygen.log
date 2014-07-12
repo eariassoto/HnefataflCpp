@@ -1,0 +1,124 @@
+warning: source ..\include\utilidades\Matriz.h is not a readable file or directory... skipping.
+warning: source ..\include\utilidades\MatrizDoble.h is not a readable file or directory... skipping.
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:79: warning: argument 'char' of command @param is not found in the argument list of Archivo::archivoExiste(const char *path)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:79: warning: The following parameters of Archivo::archivoExiste(const char *path) are not documented:
+  parameter 'path'
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:87: warning: argument 'char' of command @param is not found in the argument list of Archivo::borrarArchivo(const char *s)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:87: warning: The following parameters of Archivo::borrarArchivo(const char *s) are not documented:
+  parameter 's'
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:70: warning: argument 'ofstream' of command @param is not found in the argument list of Archivo::escribirEntero(ofstream &salida, int num)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:70: warning: argument 'int' of command @param is not found in the argument list of Archivo::escribirEntero(ofstream &salida, int num)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:70: warning: The following parameters of Archivo::escribirEntero(ofstream &salida, int num) are not documented:
+  parameter 'salida'
+  parameter 'num'
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:25: warning: argument 'int' of command @param is not found in the argument list of Archivo::leerCaracter(int n)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:25: warning: The following parameters of Archivo::leerCaracter(int n) are not documented:
+  parameter 'n'
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:41: warning: argument 'int' of command @param is not found in the argument list of Archivo::leerCaracteres(int b, int e)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:41: warning: argument 'int' of command @param is not found in the argument list of Archivo::leerCaracteres(int b, int e)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:41: warning: The following parameters of Archivo::leerCaracteres(int b, int e) are not documented:
+  parameter 'b'
+  parameter 'e'
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:33: warning: argument 'int' of command @param is not found in the argument list of Archivo::leerEntero(int n)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:33: warning: The following parameters of Archivo::leerEntero(int n) are not documented:
+  parameter 'n'
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:50: warning: argument 'int' of command @param is not found in the argument list of Archivo::leerEnteros(int b, int e)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:50: warning: argument 'int' of command @param is not found in the argument list of Archivo::leerEnteros(int b, int e)
+C:/Users/Emmanuel/HnefataflCpp/include/utilidades/Archivo.h:50: warning: The following parameters of Archivo::leerEnteros(int b, int e) are not documented:
+  parameter 'b'
+  parameter 'e'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Cuadro.h:24: warning: argument 'shared_ptr' of command @param is not found in the argument list of Cuadro::swap(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Cuadro.h:24: warning: argument 'Cuadro' of command @param is not found in the argument list of Cuadro::swap(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Cuadro.h:24: warning: The following parameters of Cuadro::swap(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:61: warning: argument 'shared_ptr' of command @param is not found in the argument list of Ficha::esAliado(shared_ptr< Cuadro >)=0
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:61: warning: argument 'Cuadro' of command @param is not found in the argument list of Ficha::esAliado(shared_ptr< Cuadro >)=0
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:34: warning: argument 'shared_ptr' of command @param is not found in the argument list of Ficha::esCuadro(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:34: warning: argument 'Cuadro' of command @param is not found in the argument list of Ficha::esCuadro(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:34: warning: The following parameters of Ficha::esCuadro(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:53: warning: argument 'shared_ptr' of command @param is not found in the argument list of Ficha::esEnemigo(shared_ptr< Cuadro >)=0
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:53: warning: argument 'Cuadro' of command @param is not found in the argument list of Ficha::esEnemigo(shared_ptr< Cuadro >)=0
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:19: warning: argument 'shared_ptr' of command @param is not found in the argument list of Ficha::mover(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:19: warning: argument 'Cuadro' of command @param is not found in the argument list of Ficha::mover(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:19: warning: The following parameters of Ficha::mover(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:42: warning: argument 'int' of command @param is not found in the argument list of Ficha::moverFigura(int pos, int n)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:42: warning: argument 'int' of command @param is not found in the argument list of Ficha::moverFigura(int pos, int n)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Ficha.h:42: warning: The following parameters of Ficha::moverFigura(int pos, int n) are not documented:
+  parameter 'pos'
+  parameter 'n'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaBlanca.h:23: warning: argument 'shared_ptr' of command @param is not found in the argument list of FichaBlanca::esAliado(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaBlanca.h:23: warning: argument 'Cuadro' of command @param is not found in the argument list of FichaBlanca::esAliado(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaBlanca.h:23: warning: The following parameters of FichaBlanca::esAliado(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaBlanca.h:15: warning: argument 'shared_ptr' of command @param is not found in the argument list of FichaBlanca::esEnemigo(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaBlanca.h:15: warning: argument 'Cuadro' of command @param is not found in the argument list of FichaBlanca::esEnemigo(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaBlanca.h:15: warning: The following parameters of FichaBlanca::esEnemigo(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:33: warning: argument 'shared_ptr' of command @param is not found in the argument list of FichaNegra::esAliado(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:33: warning: argument 'Cuadro' of command @param is not found in the argument list of FichaNegra::esAliado(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:33: warning: The following parameters of FichaNegra::esAliado(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:50: warning: argument 'shared_ptr' of command @param is not found in the argument list of FichaNegra::esAliadoContraRey(shared_ptr< Cuadro > c, int i)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:50: warning: argument 'Cuadro' of command @param is not found in the argument list of FichaNegra::esAliadoContraRey(shared_ptr< Cuadro > c, int i)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:50: warning: argument 'int' of command @param is not found in the argument list of FichaNegra::esAliadoContraRey(shared_ptr< Cuadro > c, int i)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:50: warning: The following parameters of FichaNegra::esAliadoContraRey(shared_ptr< Cuadro > c, int i) are not documented:
+  parameter 'c'
+  parameter 'i'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:25: warning: argument 'shared_ptr' of command @param is not found in the argument list of FichaNegra::esEnemigo(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:25: warning: argument 'Cuadro' of command @param is not found in the argument list of FichaNegra::esEnemigo(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:25: warning: The following parameters of FichaNegra::esEnemigo(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:41: warning: argument 'shared_ptr' of command @param is not found in the argument list of FichaNegra::esRey(shared_ptr< Cuadro > c, int i)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:41: warning: argument 'Cuadro' of command @param is not found in the argument list of FichaNegra::esRey(shared_ptr< Cuadro > c, int i)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:41: warning: argument 'int' of command @param is not found in the argument list of FichaNegra::esRey(shared_ptr< Cuadro > c, int i)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/FichaNegra.h:41: warning: The following parameters of FichaNegra::esRey(shared_ptr< Cuadro > c, int i) are not documented:
+  parameter 'c'
+  parameter 'i'
+C:/Users/Emmanuel/HnefataflCpp/include/interfaz/Interfaz.h:34: warning: argument 'int' of command @param is not found in the argument list of Interfaz::buscarPunto(int x, int y)
+C:/Users/Emmanuel/HnefataflCpp/include/interfaz/Interfaz.h:34: warning: argument 'int' of command @param is not found in the argument list of Interfaz::buscarPunto(int x, int y)
+C:/Users/Emmanuel/HnefataflCpp/include/interfaz/Interfaz.h:34: warning: The following parameters of Interfaz::buscarPunto(int x, int y) are not documented:
+  parameter 'x'
+  parameter 'y'
+C:/Users/Emmanuel/HnefataflCpp/include/interfaz/Interfaz.h:26: warning: argument 'shared_ptr' of command @param is not found in the argument list of Interfaz::push_figura(shared_ptr< Figura > f)
+C:/Users/Emmanuel/HnefataflCpp/include/interfaz/Interfaz.h:26: warning: argument 'Figura' of command @param is not found in the argument list of Interfaz::push_figura(shared_ptr< Figura > f)
+C:/Users/Emmanuel/HnefataflCpp/include/interfaz/Interfaz.h:26: warning: The following parameters of Interfaz::push_figura(shared_ptr< Figura > f) are not documented:
+  parameter 'f'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Jugador.h:19: warning: argument 'shared_ptr' of command @param is not found in the argument list of Jugador::esFichaMia(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Jugador.h:19: warning: argument 'Cuadro' of command @param is not found in the argument list of Jugador::esFichaMia(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Jugador.h:19: warning: The following parameters of Jugador::esFichaMia(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Jugador.h:27: warning: argument 'int' of command @param is not found in the argument list of Jugador::seleccionar(int x, int y)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Jugador.h:27: warning: argument 'int' of command @param is not found in the argument list of Jugador::seleccionar(int x, int y)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Jugador.h:27: warning: The following parameters of Jugador::seleccionar(int x, int y) are not documented:
+  parameter 'x'
+  parameter 'y'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Mapa.h:28: warning: argument 'int' of command @param is not found in the argument list of Mapa::buscar(int i, int j)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Mapa.h:28: warning: argument 'int' of command @param is not found in the argument list of Mapa::buscar(int i, int j)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Mapa.h:28: warning: The following parameters of Mapa::buscar(int i, int j) are not documented:
+  parameter 'i'
+  parameter 'j'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Mapa.h:37: warning: argument 'shared_ptr' of command @param is not found in the argument list of Mapa::guardarMapa(shared_ptr< Tablero > tablero)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Mapa.h:37: warning: argument 'Tablero' of command @param is not found in the argument list of Mapa::guardarMapa(shared_ptr< Tablero > tablero)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Mapa.h:37: warning: The following parameters of Mapa::guardarMapa(shared_ptr< Tablero > tablero) are not documented:
+  parameter 'tablero'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Rey.h:14: warning: argument 'shared_ptr' of command @param is not found in the argument list of Rey::mover(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Rey.h:14: warning: argument 'Cuadro' of command @param is not found in the argument list of Rey::mover(shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Rey.h:14: warning: The following parameters of Rey::mover(shared_ptr< Cuadro > c) are not documented:
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:17: warning: argument 'int' of command @param is not found in the argument list of Tablero::agregarFicha(int i, int j, shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:17: warning: argument 'int' of command @param is not found in the argument list of Tablero::agregarFicha(int i, int j, shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:17: warning: argument 'shared_ptr' of command @param is not found in the argument list of Tablero::agregarFicha(int i, int j, shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:17: warning: argument 'Cuadro' of command @param is not found in the argument list of Tablero::agregarFicha(int i, int j, shared_ptr< Cuadro > c)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:17: warning: The following parameters of Tablero::agregarFicha(int i, int j, shared_ptr< Cuadro > c) are not documented:
+  parameter 'i'
+  parameter 'j'
+  parameter 'c'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:42: warning: The following parameters of Tablero::comer(vector< shared_ptr< Cuadro > > respComer) are not documented:
+  parameter 'respComer'
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:29: warning: argument 'int' of command @param is not found in the argument list of Tablero::mover(int *f, int *g)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:29: warning: argument 'int' of command @param is not found in the argument list of Tablero::mover(int *f, int *g)
+C:/Users/Emmanuel/HnefataflCpp/include/modelo/Tablero.h:29: warning: The following parameters of Tablero::mover(int *f, int *g) are not documented:
+  parameter 'f'
+  parameter 'g'

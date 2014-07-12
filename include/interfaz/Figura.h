@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include "Excepcion.h"
 
+/** \brief Clase base para los elemetos graficos de la ventana
+ */
 class Figura
 {
 public:
@@ -13,13 +15,16 @@ public:
 
     };
 
+    ///Procedimientos vacios definidos por sus hijos.
     virtual void                dibujar() = 0;
     virtual sf::RectangleShape& getRect() = 0;
     virtual sf::CircleShape&    getCirc() = 0;
+
     virtual void                setVisible(bool b)
     {
         visible = b;
     };
+
     virtual int*                contiene(int, int)
     {
         throw Excepcion("no busco, soy ficha");

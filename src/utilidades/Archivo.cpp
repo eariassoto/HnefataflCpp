@@ -61,7 +61,8 @@ int Archivo::getLargoEntero()
     return getLargo() / sizeof(int);
 }
 
-void Archivo::escribirEntero(ofstream& salida, int num){
+void Archivo::escribirEntero(ofstream& salida, int num)
+{
     salida.write((char*)&num, sizeof(num));
 }
 
@@ -71,6 +72,7 @@ bool Archivo::archivoExiste(const char *path)
     return infile.good();
 }
 
-void Archivo::borrarArchivo(const char* s){
+void Archivo::borrarArchivo(const char* s)
+{
     remove(s);
 }

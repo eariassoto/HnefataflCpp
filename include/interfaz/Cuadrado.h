@@ -3,10 +3,20 @@
 #include <string>
 #include "Figura.h"
 
+/** \brief En la interfaz grafica representa un cuadro del tablero.
+ */
 class Cuadrado: public Figura
 {
+
 public:
 
+    /** \brief Calcula el color de un cuadro, es estatico puesto que se llama para la fabrica de figuras
+     *
+     * \param coordX int
+     * \param coordY int
+     * \return sf::Color
+     *
+     */
     static sf::Color getColorCuadro(int coordX, int coordY)
     {
         if (coordX % 2 == 0)
@@ -31,6 +41,11 @@ public:
         rectangulo.setPosition(y*t, x*t);
     }
 
+    /** \brief Dibuja en la referencia de ventana que tiene los elementos graficos.
+         *
+         * \return void
+         *
+         */
     void dibujar()
     {
         if(visible)
@@ -47,6 +62,13 @@ public:
         return rectangulo;
     };
 
+    /** \brief Calcula si en su cuadro esta el punto indicado por los parametros, estos son pixeles obtenidos de la ventana.
+     *
+     * \param x int
+     * \param y int
+     * \return int*
+     *
+     */
     int* contiene(int x, int y)
     {
         if(rectangulo.getGlobalBounds().contains(x, y))

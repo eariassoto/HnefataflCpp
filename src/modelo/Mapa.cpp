@@ -99,9 +99,10 @@ void Mapa::guardarMapa(shared_ptr<Tablero> tablero)
                 }
             }
         }
-        salida.close();
+    salida.close();
 }
 
-void Mapa::borrarMapa(){
+void Mapa::borrarMapa()
+{
     borrarArchivo(pathJuego.c_str());
 }
