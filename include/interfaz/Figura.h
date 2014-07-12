@@ -16,7 +16,6 @@ public:
     virtual void                dibujar() = 0;
     virtual sf::RectangleShape& getRect() = 0;
     virtual sf::CircleShape&    getCirc() = 0;
-    virtual sf::Text&           getText() = 0;
     virtual void                setVisible(bool b)
     {
         visible = b;

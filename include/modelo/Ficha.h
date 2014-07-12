@@ -18,7 +18,6 @@ public:
     virtual bool                         esCuadro(shared_ptr<Cuadro>);
     virtual void                         moverFigura(int, int);
     virtual void                         setFiguraVisible(bool);
-    virtual void                         setTextoVisible(bool);
     virtual bool                         esEnemigo(shared_ptr<Cuadro>)=0;
     virtual bool                         esAliado(shared_ptr<Cuadro>)=0;
 

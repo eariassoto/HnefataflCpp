@@ -8,9 +8,9 @@ class FabricaFigura
 {
 public:
 
-    static shared_ptr<Figura> crearCirculo(sf::Color c, int x, int y, int t, sf::RenderWindow& v, string s, bool b)
+    static shared_ptr<Figura> crearCirculo(sf::Color c, int x, int y, int t, sf::RenderWindow& v)
     {
-        return shared_ptr<Figura>(new Circulo(c, x, y, t, v, s, b));
+        return shared_ptr<Figura>(new Circulo(c, x, y, t, v));
     }
 
     static shared_ptr<Figura> crearCuadrado(sf::Color c, int x, int y, int t, sf::RenderWindow& v)

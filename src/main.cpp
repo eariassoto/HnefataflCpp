@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {
-    string pat = "map/mapa2.bin";
+    string pat = "map/mapa4.bin";
     unique_ptr<Mapa> mapa(new Mapa(pat));
     int dimension = mapa->getDimension();
     int tamVentana = (600/dimension)*dimension;
@@ -41,7 +41,7 @@ int main()
             {
             case Mapa::TipoFicha::ESQUINA:
             {
-                figura = FabricaFigura::crearCirculo(sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal, " E", true);
+                figura = FabricaFigura::crearCirculo(sf::Color(0,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::ESQUINA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -55,7 +55,7 @@ int main()
             break;
             case Mapa::TipoFicha::BLANCA:
             {
-                figura = FabricaFigura::crearCirculo(sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal, "J1", false);
+                figura = FabricaFigura::crearCirculo(sf::Color(255,255,255), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::BLANCA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -63,7 +63,7 @@ int main()
             break;
             case Mapa::TipoFicha::NEGRA:
             {
-                figura = FabricaFigura::crearCirculo(sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal, "J2", false);
+                figura = FabricaFigura::crearCirculo(sf::Color(0,0,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::NEGRA, figura);
                 tablero->agregarFicha(i,j, cuadro);
@@ -72,12 +72,12 @@ int main()
             case Mapa::TipoFicha::REY:
             {
                 ///creo el trono
-                figura = FabricaFigura::crearCirculo(sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal, " T", false);
+                figura = FabricaFigura::crearCirculo(sf::Color(255,0,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 shared_ptr<Cuadro> trono = FabricaFicha::crearFicha(FabricaFicha::TipoFicha::TRONO, figura);
 
                 ///creo el rey
-                figura = FabricaFigura::crearCirculo(sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal, " R", false);
+                figura = FabricaFigura::crearCirculo(sf::Color(255,255,0), i, j, tamCuadro, ventanaPrincipal);
                 interfaz->push_figura(figura);
                 cuadro = FabricaFicha::crearRey(figura, trono);
                 tablero->agregarFicha(i,j, cuadro);
@@ -109,8 +109,6 @@ int main()
                         if(jugador->esFichaMia(tablero->getFicha(coord[0], coord[1])))
                         {
                             jugador->seleccionar(coord[0], coord[1]);
-                            shared_ptr<Ficha> cu = dynamic_pointer_cast<Ficha>(tablero->getFicha(coord[0], coord[1]));
-                            cu->setTextoVisible(true);
                         }
                         else
                         {

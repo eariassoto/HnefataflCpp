@@ -47,11 +47,6 @@ public:
         return rectangulo;
     };
 
-    sf::Text& getText()
-    {
-        throw Excepcion("no tengo texto");
-    };
-
     int* contiene(int x, int y)
     {
         if(rectangulo.getGlobalBounds().contains(x, y))

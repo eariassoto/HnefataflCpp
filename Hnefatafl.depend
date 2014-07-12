@@ -776,15 +776,15 @@
 	"Figura.h"
 	<memory>
 
-1405111311 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
+1405132820 c:\users\emmanuel\hnefataflcpp\include\interfaz\figura.h
 	<SFML/Graphics.hpp>
 	"Excepcion.h"
 
-1405111311 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
+1405132820 c:\users\emmanuel\hnefataflcpp\include\interfaz\cuadrado.h
 	<string>
 	"Figura.h"
 
-1405111701 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
+1405134436 source:c:\users\emmanuel\hnefataflcpp\src\main.cpp
 	<iostream>
 	<map>
 	<utility>
@@ -816,7 +816,7 @@
 	<iostream>
 	<memory>
 
-1405110906 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
+1405132918 c:\users\emmanuel\hnefataflcpp\include\modelo\ficha.h
 	<vector>
 	<memory>
 	"Cuadro.h"
@@ -826,7 +826,7 @@
 	<memory>
 	"Ficha.h"
 
-1405111311 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
+1405132902 source:c:\users\emmanuel\hnefataflcpp\src\modelo\ficha.cpp
 	"Ficha.h"
 	"Excepcion.h"
 	"Esquina.h"
@@ -843,7 +843,7 @@
 	"Excepcion.h"
 	"Figura.h"
 
-1405111311 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
+1405132847 c:\users\emmanuel\hnefataflcpp\include\interfaz\circulo.h
 	<string>
 	"Figura.h"
 	"Excepcion.h"
@@ -906,7 +906,7 @@
 	"FichaBlanca.h"
 	"Esquina.h"
 
-1405111709 source:c:\users\emmanuel\hnefataflcpp\src\modelo\tablero.cpp
+1405132956 source:c:\users\emmanuel\hnefataflcpp\src\modelo\tablero.cpp
 	"Tablero.h"
 	<iostream>
 	<algorithm>
@@ -939,7 +939,7 @@
 	"Rey.h"
 	"Trono.h"
 
-1405109025 c:\users\emmanuel\hnefataflcpp\include\interfaz\fabricafigura.h
+1405132860 c:\users\emmanuel\hnefataflcpp\include\interfaz\fabricafigura.h
 	"Excepcion.h"
 	"Figura.h"
 	"Cuadrado.h"

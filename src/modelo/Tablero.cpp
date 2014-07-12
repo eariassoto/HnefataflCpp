@@ -47,9 +47,6 @@ bool Tablero::mover(int* f, int* g)
             vmatriz[f[0]][f[1]]->swap(vmatriz[g[0]][g[1]]);
             swap(vmatriz[f[0]][f[1]], vmatriz[g[0]][g[1]]);
             comer(vmatriz[g[0]][g[1]]->comer());
-
-            shared_ptr<Ficha> f = dynamic_pointer_cast<Ficha>(vmatriz[g[0]][g[1]]);
-            f->setTextoVisible(false);
             return true;
         }
         else
